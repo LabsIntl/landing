@@ -1,8 +1,0 @@
-<svg width="120" height="160" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" aria-labelledby="logo-title">
-  <title id="logo-title">LABS International Logo</title>
-  <path d="M60 10a50 50 0 0 1 0 100A50 50 0 0 1 60 10m0-8a58 58 0 1 0 0 116A58 58 0 0 0 60 2z" fill="#fff"/>
-  <path d="M60 30c16.57 0 30 13.43 30 30s-13.43 30-30 30s-30-13.43-30-30s13.43-30 30-30m0-8c-21.5 0-39 17.5-39 39s17.5 39 39 39s39-17.5 39-39s-17.5-39-39-39z" fill="#0066ff"/>
-  <circle cx="95" cy="45" r="8" fill="#fff"/>
-  <text x="50%" y="138" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#fff">LABS</text>
-  <text x="50%" y="158" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="500" letter-spacing="4" text-anchor="middle" fill="#00ff88">INTERNATIONAL</text>
-</svg>
