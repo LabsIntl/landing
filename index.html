@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LABS International - AI That Works While You Sleep</title>
     <meta name="description" content="Transform your business with AI automation that handles calls, qualifies leads, and books appointments 24/7. No more missed opportunities.">
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+   
     <style>
         :root {
             --primary-black: #000000;
@@ -23,13 +23,13 @@
             --gradient-main: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             --gradient-accent: linear-gradient(135deg, #0066ff 0%, #00ff88 100%);
         }
-        
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+       
         body {
             font-family: 'Space Grotesk', sans-serif;
             line-height: 1.6;
@@ -37,13 +37,13 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        
+       
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+       
         /* Hero Section */
         .hero {
             background: var(--gradient-main);
@@ -52,7 +52,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+       
         .hero::before {
             content: '';
             position: absolute;
@@ -64,7 +64,7 @@
                         radial-gradient(circle at 30% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
-        
+       
         .hero-content {
             position: relative;
             z-index: 2;
@@ -72,19 +72,19 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+       
         .logo-container {
             margin-bottom: 40px;
             animation: fadeInUp 0.8s ease-out;
         }
-        
+       
         .logo {
             width: 120px;
             height: 120px;
             margin: 0 auto 20px;
             display: block;
         }
-        
+       
         .hero h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
@@ -92,7 +92,7 @@
             margin-bottom: 24px;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
-        
+       
         .hero-tagline {
             font-family: 'Crimson Text', serif;
             font-size: clamp(1.2rem, 3vw, 1.8rem);
@@ -101,7 +101,7 @@
             opacity: 0.9;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
-        
+       
         .cta-buttons {
             display: flex;
             flex-direction: column;
@@ -109,7 +109,7 @@
             align-items: center;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
-        
+       
         .btn {
             padding: 16px 32px;
             border: none;
@@ -124,30 +124,30 @@
             position: relative;
             overflow: hidden;
         }
-        
+       
         .btn-primary {
             background: var(--gradient-accent);
             color: var(--primary-white);
             box-shadow: var(--shadow-strong);
         }
-        
+       
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 25px 70px rgba(0, 102, 255, 0.3);
         }
-        
+       
         .btn-secondary {
             background: transparent;
             color: var(--primary-white);
             border: 2px solid var(--primary-white);
         }
-        
+       
         .btn-secondary:hover {
             background: var(--primary-white);
             color: var(--primary-black);
             transform: translateY(-2px);
         }
-        
+       
         .phone-number {
             font-size: 1.3rem;
             font-weight: 600;
@@ -156,18 +156,18 @@
             display: block;
             text-decoration: none;
         }
-        
+       
         .phone-number:hover {
             color: var(--primary-white);
             text-shadow: 0 0 20px var(--accent-green);
         }
-        
+       
         /* Features Section */
         .features {
             padding: 100px 0;
             background: var(--primary-white);
         }
-        
+       
         .section-title {
             text-align: center;
             font-size: clamp(2rem, 4vw, 3rem);
@@ -175,14 +175,14 @@
             margin-bottom: 60px;
             color: var(--primary-black);
         }
-        
+       
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
-        
+       
         .feature-card {
             background: var(--primary-white);
             padding: 40px;
@@ -192,13 +192,13 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+       
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-strong);
             border-color: var(--accent-blue);
         }
-        
+       
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -210,64 +210,64 @@
             justify-content: center;
             font-size: 2rem;
         }
-        
+       
         .feature-card h3 {
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 16px;
             color: var(--primary-black);
         }
-        
+       
         .feature-card p {
             color: var(--text-gray);
             line-height: 1.6;
         }
-        
+       
         /* Contact Section */
         .contact {
             padding: 100px 0;
             background: var(--bg-gray);
         }
-        
+       
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: start;
         }
-        
+       
         .contact-info h2 {
             font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 24px;
             color: var(--primary-black);
         }
-        
+       
         .contact-info p {
             font-size: 1.1rem;
             color: var(--text-gray);
             margin-bottom: 32px;
             line-height: 1.7;
         }
-        
+       
         .contact-form {
             background: var(--primary-white);
             padding: 40px;
             border-radius: 20px;
             box-shadow: var(--shadow-subtle);
         }
-        
+       
         .form-group {
             margin-bottom: 24px;
         }
-        
+       
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--primary-black);
         }
-        
+       
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -279,37 +279,37 @@
             transition: all 0.3s ease;
             background: var(--primary-white);
         }
-        
+       
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-blue);
             box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
         }
-        
+       
         .form-group textarea {
             resize: vertical;
             height: 120px;
         }
-        
+       
         .checkbox-group {
             display: flex;
             align-items: flex-start;
             gap: 12px;
             margin-bottom: 24px;
         }
-        
+       
         .checkbox-group input[type="checkbox"] {
             width: auto;
             margin-top: 4px;
         }
-        
+       
         .checkbox-group label {
             margin-bottom: 0;
             font-size: 0.9rem;
             line-height: 1.5;
         }
-        
+       
         /* Chat Widget */
         .chat-widget {
             position: fixed;
@@ -317,7 +317,7 @@
             right: 24px;
             z-index: 1000;
         }
-        
+       
         .chat-button {
             width: 60px;
             height: 60px;
@@ -330,12 +330,12 @@
             box-shadow: var(--shadow-strong);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+       
         .chat-button:hover {
             transform: scale(1.1);
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
         }
-        
+       
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -347,50 +347,50 @@
                 transform: translateY(0);
             }
         }
-        
+       
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+       
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+       
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .hero {
                 padding: 60px 0 80px;
             }
-            
+           
             .container {
                 padding: 0 16px;
             }
-            
+           
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
+           
             .cta-buttons {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+           
             .btn {
                 text-align: center;
             }
-            
+           
             .features {
                 padding: 60px 0;
             }
-            
+           
             .contact {
                 padding: 60px 0;
             }
-            
+           
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -404,12 +404,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="logo-container">
-                    <img src="LABS_PLUS_2_NON-Transparent.png" alt="LABS International">
+                    <img src="LABS_PLUS_2_NON-Transparent.png" alt="LABS International Logo" class="logo">
                 </div>
-                
+               
                 <h1>AI That Works While You Sleep</h1>
                 <p class="hero-tagline">Never miss a customer again. Your AI workforce handles calls, books appointments, and grows your business 24/7.</p>
-                
+               
                 <div class="cta-buttons">
                     <a href="tel:8329374755" class="btn btn-primary">Call Now: (832) 937-4755</a>
                     <a href="#contact" class="btn btn-secondary">Get Free Demo</a>
@@ -417,44 +417,43 @@
             </div>
         </div>
     </section>
-
     <!-- Features Section -->
     <section class="features animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Your Business Never Sleeps Again</h2>
             <p style="text-align: center; font-size: 1.2rem; color: var(--text-gray); max-width: 600px; margin: 0 auto;">Transform every missed call into booked appointments with AI that sounds human, thinks smart, and works around the clock.</p>
-            
+           
             <div class="features-grid">
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">📞</div>
                     <h3>24/7 Phone Reception</h3>
                     <p>Your AI assistant answers every call instantly, qualifies leads, and handles customer inquiries with natural conversation that feels completely human.</p>
                 </div>
-                
+               
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">📅</div>
                     <h3>Smart Appointment Booking</h3>
                     <p>Automatically sync with your calendar to book appointments, send confirmations, and manage scheduling conflicts without any manual work.</p>
                 </div>
-                
+               
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">🎯</div>
                     <h3>Lead Qualification Engine</h3>
                     <p>AI determines high-value prospects instantly, captures contact details, and ensures your best leads never fall through the cracks.</p>
                 </div>
-                
+               
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">⚡</div>
                     <h3>Instant Setup</h3>
                     <p>Get your AI assistant live in under 24 hours. No complex integrations, no technical headaches - just results from day one.</p>
                 </div>
-                
+               
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">💰</div>
                     <h3>ROI That Pays for Itself</h3>
                     <p>Turn missed calls into revenue. Most clients see their investment paid back within the first month from captured leads alone.</p>
                 </div>
-                
+               
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon">🔄</div>
                     <h3>Complete Automation</h3>
@@ -463,7 +462,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact animate-on-scroll">
         <div class="container">
@@ -472,49 +470,49 @@
                     <h2>Ready to Never Miss Another Customer?</h2>
                     <p>Join hundreds of businesses already using AI automation to capture more leads, book more appointments, and grow faster than ever.</p>
                     <p><strong>Call now and speak with our AI assistant to experience the technology firsthand.</strong></p>
-                    
+                   
                     <a href="tel:8329374755" class="phone-number">(832) 937-4755</a>
-                    
+                   
                     <p style="margin-top: 24px; font-size: 0.95rem; opacity: 0.8;">Or fill out the form and we'll show you exactly how this works for your specific business.</p>
                 </div>
-                
+               
                 <form class="contact-form" action="mailto:stephen@labsintl.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    
+                   
                     <div class="form-group">
                         <label for="business">Business Name *</label>
                         <input type="text" id="business" name="business" required>
                     </div>
-                    
+                   
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
-                    
+                   
                     <div class="form-group">
                         <label for="email">Email *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    
+                   
                     <div class="form-group">
                         <label for="challenge">Biggest Business Challenge</label>
                         <textarea id="challenge" name="challenge" placeholder="What's holding your business back from growing faster?"></textarea>
                     </div>
-                    
+                   
                     <div class="checkbox-group">
                         <input type="checkbox" id="text-consent" name="text_consent" value="yes">
                         <label for="text-consent">
                             I consent to receive text messages from LABS International with updates about my automation setup and exclusive growth tips. Reply STOP to opt-out anytime.
                         </label>
                     </div>
-                    
+                   
                     <button type="submit" class="btn btn-primary" style="width: 100%;">
                         Get My Free AI Demo
                     </button>
-                    
+                   
                     <p style="font-size: 0.85rem; color: var(--text-gray); text-align: center; margin-top: 16px;">
                         We respect your privacy. Your information is never shared or sold.
                     </p>
@@ -522,14 +520,12 @@
             </div>
         </div>
     </section>
-
     <!-- Chat Widget -->
     <div class="chat-widget">
         <button class="chat-button" onclick="openChat()" title="Chat with our AI">
             💬
         </button>
     </div>
-
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -544,13 +540,11 @@
                 }
             });
         });
-
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -558,11 +552,9 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
-
         // Chat widget functionality (placeholder)
         function openChat() {
             alert('Chat feature coming soon! For immediate assistance, please call (832) 937-4755 or fill out the contact form below.');
@@ -570,49 +562,47 @@
             // This is where you would initialize your chatbot widget
             // Example: window.chatbot.open();
         }
-
         // Enhanced form handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+           
             const formData = new FormData(this);
             const formObject = {};
-            
+           
             for (let [key, value] of formData.entries()) {
                 formObject[key] = value;
             }
-            
+           
             // Create mailto body
             let emailBody = `New Demo Request from ${formObject.name}\n\n`;
             emailBody += `Business: ${formObject.business}\n`;
             emailBody += `Phone: ${formObject.phone}\n`;
             emailBody += `Email: ${formObject.email}\n\n`;
-            
+           
             if (formObject.challenge) {
                 emailBody += `Challenge: ${formObject.challenge}\n\n`;
             }
-            
+           
             if (formObject.text_consent) {
                 emailBody += `Text consent: Yes\n`;
             }
-            
+           
             // Create mailto link
             const subject = `Demo Request - ${formObject.business}`;
             const mailtoLink = `mailto:stephen@labsintl.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-            
+           
             // Open default email client
             window.location.href = mailtoLink;
-            
+           
             // Show success message
             alert('Thank you! Your default email client should open with your message. If not, please call us at (832) 937-4755.');
         });
-
         // Add some dynamic effects
         document.addEventListener('mousemove', function(e) {
             const hero = document.querySelector('.hero');
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
-            
+           
             hero.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
         });
     </script>
