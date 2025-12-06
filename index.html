@@ -6,14 +6,14 @@
     <title>LABS International — AI Automation Platform</title>
     <meta name="description" content="AI that answers phones, books jobs, qualifies leads, and runs your service business 24/7.">
 
-    <!-- SCHEMA MARKUP — ADDED AT THE TOP (Google loves this) -->
+    <!-- SCHEMA (Google loves this at the top) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "LABS International",
       "url": "https://labsintl.com",
-      "logo": "https://labsintl.com/logo-white.png",
+      "logo": "https://labsintl.com/logo.svg",
       "description": "AI automation platform for service businesses. 24/7 phone answering, appointment booking, lead qualification, and follow-up automation for roofing, HVAC, plumbing, and home services in Houston.",
       "telephone": "+1-832-937-4755",
       "address": {
@@ -35,25 +35,6 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "LABS International",
-      "image": "https://labsintl.com/logo-white.png",
-      "telephone": "(832) 937-4755",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Houston",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
-      "url": "https://labsintl.com",
-      "description": "AI automation for contractors – never miss another call or lead again."
-    }
-    </script>
-    <!-- END SCHEMA -->
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -74,13 +55,25 @@
         }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
 
+        /* White header for your original logo.svg */
         header {
-            padding: 48px 0;
+            background: #ffffff;
+            padding: 40px 0;
             text-align: center;
-            border-bottom: 1px solid var(--border);
         }
-        
-        .tagline { margin-top: 16px; font-size: 15px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+        .logo {
+            height: 90px;          /* perfect size */
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .tagline {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
         .hero {
             padding: 160px 0 180px;
@@ -160,7 +153,7 @@
 
     <header>
         <div class="container">
-            <img src="logo.svg" alt="LABS International Logo" class="logo">
+            <img src="https://labsintl.com/logo.svg" alt="LABS International" class="logo">
             <div class="tagline">AI Automation Platform</div>
         </div>
     </header>
@@ -172,7 +165,7 @@
             <div style="margin-top: 64px;">
                 <a href="tel:8329374755" class="cta">Call (832) 937-4755</a>
                 <span style="margin:0 32px; color:#444;">•</span>
-                <a href="mailto:stephen@labsintl.com" class="cta">Email LABS Intl</a>
+                <a href="mailto:stephen@labsintl.com" class="cta">Email Stephen</a>
             </div>
         </div>
     </section>
