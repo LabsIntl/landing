@@ -109,6 +109,7 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
+            border: none;
         }
         .cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
 
@@ -261,9 +262,9 @@
             <h1>AI That Runs<br>Your Business</h1>
             <p>24/7 phone reception • lead qualification • appointment booking • follow-up automation • calendar sync • CRM integration</p>
             <div style="margin-top: 64px;">
-                <a href="tel:8329374755" class="cta" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Call Button'});">Call (832) 937-4755</a>
+                <a href="tel:8329374755" class="cta" id="callButton">Call (832) 937-4755</a>
                 <span style="margin:0 32px; color:#444;">•</span>
-                <button class="cta" onclick="openPopup(); gtag('event', 'click', {event_category: 'CTA', event_label: 'What Do You Want Automated'});">What Do You Want Automated?</button>
+                <button class="cta" id="automateButton">What Do You Want Automated?</button>
             </div>
         </div>
     </section>
@@ -312,11 +313,11 @@
     <!-- Popup Form -->
     <div class="popup-overlay" id="automationPopup">
         <div class="popup-box">
-            <button class="popup-close" onclick="closePopup()">×</button>
+            <button class="popup-close" id="closePopupBtn">×</button>
             <h2>What Can We Automate?</h2>
             <p>Tell us what would make your life or business easier and we will create the solution!</p>
             
-            <form id="automationForm" onsubmit="submitForm(event)">
+            <form id="automationForm">
                 <textarea 
                     name="automation_request" 
                     placeholder="What would you like to automate?"
@@ -349,54 +350,86 @@
         </div>
     </div>
 
-    <script>
+<script>
+// Wait for DOM to fully load
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Track call button clicks
+    document.getElementById('callButton').addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'click', {
+                event_category: 'CTA',
+                event_label: 'Call Button'
+            });
+        }
+    });
+    
     // Open popup
-    function openPopup() {
+    document.getElementById('automateButton').addEventListener('click', function() {
         document.getElementById('automationPopup').classList.add('active');
-        gtag('event', 'popup_open', {event_category: 'Form', event_label: 'Automation Request'});
-    }
-
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'popup_open', {
+                event_category: 'Form',
+                event_label: 'Automation Request'
+            });
+        }
+    });
+    
     // Close popup
-    function closePopup() {
+    document.getElementById('closePopupBtn').addEventListener('click', function() {
         document.getElementById('automationPopup').classList.remove('active');
-    }
-
+    });
+    
     // Close on outside click
     document.getElementById('automationPopup').addEventListener('click', function(e) {
-        if (e.target === this) closePopup();
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
     });
-
-    // Submit form
-    async function submitForm(e) {
+    
+    // Handle form submission
+    document.getElementById('automationForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const formData = {
-            automation_request: e.target.automation_request.value,
-            name: e.target.name.value,
-            phone: e.target.phone.value,
-            email: e.target.email.value,
+            automation_request: this.automation_request.value,
+            name: this.name.value,
+            phone: this.phone.value,
+            email: this.email.value,
             timestamp: new Date().toISOString()
         };
         
-        // TODO: Replace with your n8n webhook URL or Vapi integration
-        // await fetch('YOUR_N8N_WEBHOOK_URL', {
-        //     method: 'POST',
-        //     headers: {'Content-Type': 'application/json'},
-        //     body: JSON.stringify(formData)
-        // });
-        
-        // For now, just log to console
         console.log('Form submitted:', formData);
+        
+        // TODO: Replace with your webhook URL
+        // try {
+        //     await fetch('YOUR_N8N_WEBHOOK_URL', {
+        //         method: 'POST',
+        //         headers: {'Content-Type': 'application/json'},
+        //         body: JSON.stringify(formData)
+        //     });
+        // } catch (error) {
+        //     console.error('Error submitting form:', error);
+        // }
+        
+        // Track conversion
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+                event_category: 'Lead',
+                event_label: 'Automation Request'
+            });
+        }
         
         // Show success message
         alert('Thanks! We'll reach out within 24 hours to discuss your automation.');
-        closePopup();
-        e.target.reset();
         
-        // Track conversion
-        gtag('event', 'form_submit', {event_category: 'Lead', event_label: 'Automation Request'});
-    }
-    </script>
+        // Close popup and reset form
+        document.getElementById('automationPopup').classList.remove('active');
+        this.reset();
+    });
+    
+});
+</script>
 
 </body>
 </html>
