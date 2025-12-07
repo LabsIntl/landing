@@ -411,7 +411,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log('Form submitted:', formData);
         
-        // TODO: Replace with your webhook URL
+        try {
+    await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(formData)
+    });
+} catch (error) {
+    console.error('Error submitting form:', error);
+}
+// TODO: Replace with your webhook URL
         // try {
         //     await fetch('YOUR_N8N_WEBHOOK_URL', {
         //         method: 'POST',
