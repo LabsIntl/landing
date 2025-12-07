@@ -6,6 +6,15 @@
     <title>LABS International — AI Automation Platform</title>
     <meta name="description" content="AI that answers phones, books jobs, qualifies leads, and runs your service business 24/7.">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81K96D9CKD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-81K96D9CKD');
+    </script>
+
     <!-- SCHEMA (Google loves this at the top) -->
     <script type="application/ld+json">
     {
@@ -55,10 +64,10 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat fixed;
             padding: 200px 0 140px;
             text-align: center;
-            min-height: 50vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -99,6 +108,7 @@
             padding: 16px 48px;
             border-radius: 50px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         .cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
 
@@ -142,6 +152,89 @@
         }
         .social a:hover { color: var(--accent); }
 
+        /* Popup Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        /* Popup Box */
+        .popup-box {
+            background: #ffffff;
+            max-width: 600px;
+            width: 90%;
+            padding: 60px 50px;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        /* Close Button */
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 32px;
+            color: #000;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Form Styling */
+        .popup-box h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        .popup-box p {
+            font-size: 18px;
+            color: #404040;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .popup-box input,
+        .popup-box textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            color: #000;
+        }
+        .popup-box textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .popup-box button[type="submit"] {
+            width: 100%;
+            padding: 18px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        .popup-box button[type="submit"]:hover {
+            background: #333;
+        }
+
         @media (max-width: 768px) {
             .container { padding: 0 32px; }
             .hero { padding: 120px 0; }
@@ -158,7 +251,7 @@
                  alt="LABS International" 
                  class="logo">
             <div style="margin-top: 36px; font-size: 21px; color: #999; letter-spacing: 7px; text-transform: uppercase; font-weight: 300;">
-                AI Automation for Everyone
+                AI Automation for Service Businesses
             </div>
         </div>
     </header>
@@ -168,9 +261,9 @@
             <h1>AI That Runs<br>Your Business</h1>
             <p>24/7 phone reception • lead qualification • appointment booking • follow-up automation • calendar sync • CRM integration</p>
             <div style="margin-top: 64px;">
-                <a href="tel:8329374755" class="cta">Call (832) 937-4755</a>
+                <a href="tel:8329374755" class="cta" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Call Button'});">Call (832) 937-4755</a>
                 <span style="margin:0 32px; color:#444;">•</span>
-                <a href="mailto:stephen@labsintl.com" class="cta">What Do You Want Automated?</a>
+                <a href="#" class="cta" onclick="openPopup(); gtag('event', 'click', {event_category: 'CTA', event_label: 'What Do You Want Automated'}); return false;">What Do You Want Automated?</a>
             </div>
         </div>
     </section>
@@ -215,6 +308,95 @@
             <p style="color:#444; font-size:14px;">© 2025 LABS International • Houston, Texas</p>
         </div>
     </footer>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="automationPopup">
+        <div class="popup-box">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <h2>What Can We Automate?</h2>
+            <p>Tell us what would make your life or business easier and we will create the solution!</p>
+            
+            <form id="automationForm" onsubmit="submitForm(event)">
+                <textarea 
+                    name="automation_request" 
+                    placeholder="What would you like to automate?"
+                    required
+                ></textarea>
+                
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Your Name"
+                    required
+                >
+                
+                <input 
+                    type="tel" 
+                    name="phone" 
+                    placeholder="Phone Number"
+                    required
+                >
+                
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email Address"
+                    required
+                >
+                
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Open popup
+    function openPopup() {
+        document.getElementById('automationPopup').classList.add('active');
+        gtag('event', 'popup_open', {event_category: 'Form', event_label: 'Automation Request'});
+    }
+
+    // Close popup
+    function closePopup() {
+        document.getElementById('automationPopup').classList.remove('active');
+    }
+
+    // Close on outside click
+    document.getElementById('automationPopup').addEventListener('click', function(e) {
+        if (e.target === this) closePopup();
+    });
+
+    // Submit form
+    async function submitForm(e) {
+        e.preventDefault();
+        
+        const formData = {
+            automation_request: e.target.automation_request.value,
+            name: e.target.name.value,
+            phone: e.target.phone.value,
+            email: e.target.email.value,
+            timestamp: new Date().toISOString()
+        };
+        
+        // TODO: Replace with your n8n webhook URL or Vapi integration
+        // await fetch('YOUR_N8N_WEBHOOK_URL', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify(formData)
+        // });
+        
+        // For now, just log to console
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        alert('Thanks! We'll reach out within 24 hours to discuss your automation.');
+        closePopup();
+        e.target.reset();
+        
+        // Track conversion
+        gtag('event', 'form_submit', {event_category: 'Lead', event_label: 'Automation Request'});
+    }
+    </script>
 
 </body>
 </html>
