@@ -64,7 +64,7 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat;
             padding: 200px 0 140px;
             text-align: center;
             min-height: 70vh;
@@ -72,6 +72,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            background-attachment: scroll;
         }
         .logo {
             height: 420px;
@@ -241,6 +242,15 @@
             .hero { padding: 120px 0; }
             .features { padding: 120px 0; gap: 64px; }
             .logo { height: 280px; }
+            
+            /* Mobile background optimization */
+            header {
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
+                min-height: 100vh;
+                padding: 100px 0 60px;
+            }
         }
     </style>
 </head>
