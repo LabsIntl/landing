@@ -401,35 +401,27 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('automationForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        const form = e.target;
+
         const formData = {
-            automation_request: this.automation_request.value,
-            name: this.name.value,
-            phone: this.phone.value,
-            email: this.email.value,
+            automation_request: form.querySelector('[name="automation_request"]').value,
+            name: form.querySelector('[name="name"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            email: form.querySelector('[name="email"]').value,
             timestamp: new Date().toISOString()
         };
         
         console.log('Form submitted:', formData);
         
         try {
-    await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(formData)
-    });
-} catch (error) {
-    console.error('Error submitting form:', error);
-}
-// TODO: Replace with your webhook URL
-        // try {
-        //     await fetch('YOUR_N8N_WEBHOOK_URL', {
-        //         method: 'POST',
-        //         headers: {'Content-Type': 'application/json'},
-        //         body: JSON.stringify(formData)
-        //     });
-        // } catch (error) {
-        //     console.error('Error submitting form:', error);
-        // }
+            await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(formData)
+            });
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
         
         // Track conversion
         if (typeof gtag !== 'undefined') {
@@ -444,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close popup and reset form
         document.getElementById('automationPopup').classList.remove('active');
-        this.reset();
+        form.reset();
     });
     
 });
