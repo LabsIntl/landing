@@ -304,7 +304,7 @@
                 </div>
                 <div class="feature">
                     <h3>ROI in 30 Days</h3>
-                    <p>Clients average 30–60% more booked jobs from captured after-hours leads.</p>
+                    <p>Clients average 30-60% more booked jobs from captured after-hours leads.</p>
                 </div>
             </div>
         </div>
@@ -399,31 +399,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle form submission
     document.getElementById("automationForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const formData = {
-        automation_request: document.getElementById("automation_request").value,
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        timestamp: new Date().toISOString()
-    };
-
-    console.log("Sending:", formData);
-
-    await fetch("https://n8n.labsintl.com/webhook/web_automation_request", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-    });
-
-    alert("Thanks! We’ll reach out shortly.");
+        e.preventDefault();
         
-        // Close popup and reset form
-        document.getElementById('automationPopup').classList.remove('active');
-        form.reset();
+        const form = this;
+        
+        const formData = {
+            automation_request: form.automation_request.value,
+            name: form.name.value,
+            phone: form.phone.value,
+            email: form.email.value,
+            timestamp: new Date().toISOString()
+        };
+
+        console.log("Sending:", formData);
+
+        try {
+            const response = await fetch("https://n8n.labsintl.com/webhook/web_automation_request", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                // Track conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        event_category: 'Lead',
+                        event_label: 'Automation Request'
+                    });
+                }
+                
+                alert("Thanks! We will reach out within 24 hours to discuss your automation.");
+                
+                // Close popup and reset form
+                document.getElementById('automationPopup').classList.remove('active');
+                form.reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+            
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Thanks for your request! If you do not hear from us within 24 hours, please call us directly at (832) 937-4755.');
+            
+            // Still close popup and reset form
+            document.getElementById('automationPopup').classList.remove('active');
+            form.reset();
+        }
     });
     
 });
