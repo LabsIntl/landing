@@ -398,41 +398,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Handle form submission
-    document.getElementById('automationForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const form = e.target;
+    document.getElementById("automationForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-        const formData = {
-            automation_request: form.querySelector('[name="automation_request"]').value,
-            name: form.querySelector('[name="name"]').value,
-            phone: form.querySelector('[name="phone"]').value,
-            email: form.querySelector('[name="email"]').value,
-            timestamp: new Date().toISOString()
-        };
-        
-        console.log('Form submitted:', formData);
-        
-        try {
-            await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(formData)
-            });
-        } catch (error) {
-            console.error('Error submitting form:', error);
-        }
-        
-        // Track conversion
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submit', {
-                event_category: 'Lead',
-                event_label: 'Automation Request'
-            });
-        }
-        
-        // Show success message
-        alert('Thanks! We will reach out within 24 hours to discuss your automation.');
+    const formData = {
+        automation_request: document.getElementById("automation_request").value,
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        timestamp: new Date().toISOString()
+    };
+
+    console.log("Sending:", formData);
+
+    await fetch("https://n8n.labsintl.com/webhook/web_automation_request", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    });
+
+    alert("Thanks! We’ll reach out shortly.");
         
         // Close popup and reset form
         document.getElementById('automationPopup').classList.remove('active');
