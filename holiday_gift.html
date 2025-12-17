@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your Automation Gift</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #111;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(255, 50, 50, 0.1);
+        }
+
+        h1 {
+            color: #ff3333;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            background: #ff3333;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff5555;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .step {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div id="step1" class="step">
+            <h1>Let's Automate It.</h1>
+            <p>Tell me a bit about your firm so I can design the perfect solution.</p>
+
+            <label>How many employees do you have?</label>
+            <select id="employees">
+                <option value="1-5">1-5 (Solo/Small)</option>
+                <option value="6-20">6-20 (Growing)</option>
+                <option value="20+">20+ (Established)</option>
+            </select>
+
+            <label>What CRM / Case Management software do you use?</label>
+            <input type="text" id="crm" placeholder="e.g. Clio, MyCase, Salesforce, Excel...">
+
+            <label>What is your biggest time waster right now?</label>
+            <textarea id="pain" rows="3"
+                placeholder="e.g. Chasing leads, scheduling depositions, intake forms..."></textarea>
+
+            <button onclick="nextStep()">Build My Solution →</button>
+        </div>
+
+        <div id="step2" class="step hidden">
+            <h1>Great match.</h1>
+            <p> based on your size and stack, I can build an agent that integrates directly with <strong><span
+                        id="crm-display"></span></strong> to solve that pain point.</p>
+
+            <p>Let's book a 15-min demo so I can hand over the keys.</p>
+
+            <!-- Calendly inline widget or similar would go here. For now, a button to external booking. -->
+            <a href="https://calendly.com/stephen-labsintl/15min" target="_blank" style="text-decoration:none;">
+                <button>Book Free Discovery Call</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function nextStep() {
+            const crm = document.getElementById('crm').value || "your current system";
+            document.getElementById('crm-display').innerText = crm;
+
+            // Todo: Send data to webhook/backend to save lead qualification
+
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
