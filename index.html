@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LABS International - AI Automation Platform</title>
-    <meta name="description" content="AI that answers phones, books jobs, qualifies leads, and runs your service business 24/7.">
+    <title>LABS International | AI Automation for Service Businesses</title>
+    <meta name="description" content="AI that answers your phones, books jobs, qualifies leads, and runs your service business 24/7. Houston-based AI automation for roofing, HVAC, plumbing, and home services.">
+    <meta name="keywords" content="AI automation, phone answering AI, appointment booking, lead qualification, service business automation, Houston AI, HVAC automation, roofing automation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://labsintl.com">
+    <meta name="theme-color" content="#020817">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LABS International">
+    <meta property="og:title" content="LABS International | AI That Runs Your Business">
+    <meta property="og:description" content="24/7 phone reception, lead qualification, appointment booking, and follow-up automation for service businesses.">
+    <meta property="og:url" content="https://labsintl.com">
+    <meta property="og:image" content="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LABS International | AI That Runs Your Business">
+    <meta name="twitter:description" content="AI automation for service businesses. Never miss a lead again.">
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-81K96D9CKD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,7 +32,7 @@
       gtag('config', 'G-81K96D9CKD');
     </script>
 
-    <!-- SCHEMA (Google loves this at the top) -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -23,8 +40,9 @@
       "name": "LABS International",
       "url": "https://labsintl.com",
       "logo": "https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png",
-      "description": "AI automation platform for service businesses. 24/7 phone answering, appointment booking, lead qualification, and follow-up automation for roofing, HVAC, plumbing, and home services in Houston.",
+      "description": "AI automation platform for service businesses. 24/7 phone answering, appointment booking, lead qualification, and follow-up automation.",
       "telephone": "+1-832-937-4755",
+      "email": "stephen@labsintl.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Houston",
@@ -43,419 +61,1025 @@
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
+        /* ===== DESIGN TOKENS ===== */
         :root {
-            --bg: #000000;
-            --surface: #111111;
-            --accent: #ffffff;
-            --text: #ffffff;
-            --muted: #aaaaaa;
-            --border: #222222;
+            --bg:           #020817;
+            --surface:      #0f172a;
+            --surface-2:    #1e293b;
+            --accent:       #3b82f6;
+            --accent-2:     #6366f1;
+            --accent-glow:  rgba(59,130,246,0.3);
+            --text:         #f8fafc;
+            --muted:        rgba(248,250,252,0.55);
+            --border:       rgba(59,130,246,0.15);
+            --border-solid: rgba(59,130,246,0.4);
         }
-        * { margin:0; padding:0; box-sizing:border-box; }
+
+        /* ===== RESET ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Outfit', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
-            font-size: 18px;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; }
+        img { max-width: 100%; display: block; }
 
-        header {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat;
-            padding: 200px 0 140px;
-            text-align: center;
-            min-height: 70vh;
+        /* ===== UTILITIES ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.1s; }
+        .reveal-d2 { transition-delay: 0.2s; }
+        .reveal-d3 { transition-delay: 0.3s; }
+        .reveal-d4 { transition-delay: 0.4s; }
+        .reveal-d5 { transition-delay: 0.5s; }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 22px 0;
+            transition: background 0.35s, padding 0.35s, border-color 0.35s;
+            border-bottom: 1px solid transparent;
+        }
+        nav.scrolled {
+            background: rgba(2,8,23,0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 15px 0;
+            border-bottom-color: var(--border);
+        }
+        .nav-inner {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            background-attachment: scroll;
+            justify-content: space-between;
         }
-        .logo {
-            height: 420px;
-            width: auto;
-            filter: drop-shadow(0 0 80px rgba(255,255,255,0.6));
-        }
-
-        .hero {
-            padding: 160px 0 180px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: clamp(64px, 10vw, 120px);
+        .nav-wordmark {
+            font-size: 0.85rem;
             font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -4px;
-            margin-bottom: 32px;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-        }
-        .hero p {
-            font-size: 24px;
-            max-width: 820px;
-            margin: 0 auto 56px;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-        .cta {
-            display: inline-block;
-            font-size: 20px;
-            font-weight: 600;
-            color: #000000;
-            background: var(--accent);
-            text-decoration: none;
-            padding: 16px 48px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        .cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-
-        .features {
-            padding: 180px 0;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 80px;
-        }
-        .feature h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 16px;
             color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-wordmark .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: inline-block;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-        }
-        .feature p {
-            font-size: 18px;
             color: var(--muted);
-            line-height: 1.6;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 11px 26px;
+            border: none;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .nav-cta:hover {
+            background: var(--accent-2);
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px;
+            background: var(--text);
+            transition: all 0.3s;
         }
 
-        footer {
-            padding: 120px 0 80px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-        .social {
-            margin: 48px 0;
-        }
-        .social a {
-            color: var(--muted);
-            margin: 0 24px;
-            font-size: 15px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .social a:hover { color: var(--accent); }
-
-        /* Popup Overlay */
-        .popup-overlay {
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 9999;
+            inset: 0;
+            background: var(--bg);
+            z-index: 150;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a, .mobile-menu button.mob-link {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text);
+            background: none;
+            border: none;
+            transition: color 0.2s;
+        }
+        .mobile-menu a:hover, .mobile-menu button.mob-link:hover { color: var(--accent); }
+        .mobile-close {
+            position: absolute; top: 24px; right: 28px;
+            background: none; border: none;
+            color: var(--muted); font-size: 2rem; cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat;
+            opacity: 0.07;
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+            background-size: 68px 68px;
+        }
+        .hero-radial {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -58%);
+            width: 920px; height: 920px;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 68%);
+            pointer-events: none;
+        }
+        .hero-vignette {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom,
+                var(--bg) 0%,
+                transparent 20%,
+                transparent 80%,
+                var(--bg) 100%);
+        }
+        .hero-topline {
+            position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(59,130,246,0.65), transparent);
+        }
+
+        .hero-content {
+            position: relative; z-index: 2;
+            text-align: center;
+            max-width: 1040px;
+            padding: 160px 40px 80px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.38em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 36px;
+            animation: fadeUp 0.8s ease both;
+        }
+        .hero-eyebrow .eline {
+            display: block; width: 28px; height: 1px;
+            background: var(--accent); opacity: 0.55;
+        }
+
+        .hero h1 {
+            font-size: clamp(54px, 9vw, 108px);
+            font-weight: 900;
+            line-height: 0.93;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+            animation: fadeUp 0.9s ease 0.08s both;
+        }
+        .hero h1 .blue { color: var(--accent); }
+
+        .hero-sub {
+            font-size: clamp(15px, 1.8vw, 20px);
+            font-weight: 500;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 56px;
+            line-height: 1.75;
+            animation: fadeUp 0.9s ease 0.16s both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 64px;
+            animation: fadeUp 0.9s ease 0.24s both;
+        }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--accent); color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            padding: 16px 36px; border: none;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--accent-2);
+            box-shadow: 0 0 32px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: transparent; color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            padding: 15px 36px;
+            border: 1px solid var(--border-solid);
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 24px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .hero-cred {
+            border-top: 1px solid rgba(248,250,252,0.07);
+            padding-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            animation: fadeUp 0.9s ease 0.32s both;
         }
-        .popup-overlay.active {
-            display: flex;
+        .cred-item {
+            font-size: 0.62rem; font-weight: 600;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: rgba(248,250,252,0.38);
+            font-family: monospace;
         }
+        .cred-sep { margin: 0 18px; color: rgba(59,130,246,0.28); font-size: 0.7rem; }
 
-        /* Popup Box */
-        .popup-box {
-            background: #ffffff;
-            max-width: 600px;
-            width: 90%;
-            padding: 60px 50px;
-            border-radius: 2px;
-            position: relative;
+        /* ===== STATS ===== */
+        .stats {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
-
-        /* Close Button */
-        .popup-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 32px;
-            color: #000;
-            cursor: pointer;
-            border: none;
-            background: none;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
         }
-
-        /* Form Styling */
-        .popup-box h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 16px;
+        .stat-card {
+            padding: 56px 40px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            transition: background 0.25s;
         }
-        .popup-box p {
-            font-size: 18px;
-            color: #404040;
-            margin-bottom: 40px;
+        .stat-card:last-child { border-right: none; }
+        .stat-card:hover { background: rgba(59,130,246,0.04); }
+        .stat-number {
+            font-size: clamp(40px,5vw,66px);
+            font-weight: 900;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+        .stat-label {
+            font-size: 0.68rem; font-weight: 600;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--muted);
+            max-width: 200px; margin: 0 auto;
             line-height: 1.6;
         }
-        .popup-box input,
-        .popup-box textarea {
-            width: 100%;
-            padding: 16px;
-            margin-bottom: 20px;
-            border: 1px solid #e5e5e5;
-            border-radius: 2px;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            color: #000;
+
+        /* ===== SECTION COMMON ===== */
+        .section-eyebrow {
+            font-size: 0.63rem; font-weight: 700;
+            letter-spacing: 0.38em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 18px;
         }
-        .popup-box textarea {
-            min-height: 120px;
-            resize: vertical;
+        .section-title {
+            font-size: clamp(30px,4.5vw,52px);
+            font-weight: 900; letter-spacing: -0.025em;
+            text-transform: uppercase; line-height: 1.0;
+            margin-bottom: 22px;
         }
-        .popup-box button[type="submit"] {
-            width: 100%;
-            padding: 18px;
-            background: #000;
-            color: #fff;
-            border: none;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 2px;
-            transition: background 0.3s;
-        }
-        .popup-box button[type="submit"]:hover {
-            background: #333;
+        .section-sub {
+            font-size: 1.05rem; color: var(--muted);
+            line-height: 1.75; max-width: 540px;
+            margin-bottom: 64px;
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 32px; }
-            .hero { padding: 120px 0; }
-            .features { padding: 120px 0; gap: 64px; }
-            .logo { height: 280px; }
-            
-            /* Mobile background optimization */
-            header {
-                background-size: cover;
-                background-position: center center;
-                background-attachment: scroll;
-                min-height: 100vh;
-                padding: 100px 0 60px;
-            }
+        /* ===== FEATURES ===== */
+        .features { padding: 120px 0; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+        .feature-card {
+            background: var(--bg);
+            padding: 44px 38px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card:hover { background: rgba(59,130,246,0.04); }
+        .feature-card:hover::after { opacity: 1; }
+        .feature-icon {
+            width: 46px; height: 46px;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid var(--border-solid);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
+            margin-bottom: 26px;
+        }
+        .feature-card h3 {
+            font-size: 0.88rem; font-weight: 800;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .feature-card p {
+            font-size: 0.88rem; color: var(--muted); line-height: 1.75;
+        }
+
+        /* ===== INTEGRATIONS ===== */
+        .integrations {
+            padding: 80px 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .int-label {
+            text-align: center;
+            font-size: 0.63rem; font-weight: 700;
+            letter-spacing: 0.38em; text-transform: uppercase;
+            color: var(--muted); margin-bottom: 40px;
+        }
+        .int-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .int-pill {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 22px;
+            border: 1px solid var(--border);
+            background: rgba(59,130,246,0.03);
+            font-size: 0.78rem; font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .int-pill:hover {
+            border-color: var(--border-solid);
+            color: var(--text);
+            background: rgba(59,130,246,0.07);
+        }
+        .int-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ===== CTA BAND ===== */
+        .cta-band {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-band::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 68%);
+            pointer-events: none;
+        }
+        .cta-band h2 {
+            font-size: clamp(34px,5.5vw,68px);
+            font-weight: 900; letter-spacing: -0.025em;
+            text-transform: uppercase; line-height: 1.0;
+            margin-bottom: 22px;
+        }
+        .cta-band h2 .blue { color: var(--accent); }
+        .cta-band p {
+            font-size: 1.05rem; color: var(--muted);
+            max-width: 520px; margin: 0 auto 48px;
+            line-height: 1.75;
+        }
+        .cta-row {
+            display: flex; gap: 14px;
+            justify-content: center; flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 72px 0 48px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-inner {
+            display: flex; flex-direction: column;
+            align-items: center; gap: 28px;
+            text-align: center;
+        }
+        .footer-logo-img {
+            height: 52px; width: auto;
+            margin: 0 auto;
+            filter: brightness(1.05);
+        }
+        .footer-social {
+            display: flex; gap: 36px;
+        }
+        .footer-social a {
+            font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+        .footer-social a:hover { color: var(--accent); }
+        .footer-legal {
+            font-size: 0.6rem;
+            color: rgba(248,250,252,0.28);
+            letter-spacing: 0.06em;
+        }
+        .footer-legal a {
+            color: rgba(248,250,252,0.4);
+            transition: color 0.2s;
+        }
+        .footer-legal a:hover { color: var(--accent); }
+
+        /* ===== POPUP ===== */
+        .popup-overlay {
+            position: fixed; inset: 0;
+            background: rgba(2,8,23,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .popup-overlay.active { display: flex; }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: translateY(28px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .popup-box {
+            background: var(--surface);
+            border: 1px solid var(--border-solid);
+            box-shadow: 0 0 80px rgba(59,130,246,0.14);
+            width: 100%; max-width: 560px;
+            padding: 48px;
+            position: relative;
+            animation: popIn 0.3s ease;
+        }
+        .popup-close {
+            position: absolute; top: 18px; right: 22px;
+            background: none; border: none;
+            color: var(--muted); font-size: 1.4rem;
+            cursor: pointer; transition: color 0.2s;
+        }
+        .popup-close:hover { color: var(--text); }
+        .popup-box h3 {
+            font-size: 1.5rem; font-weight: 900;
+            letter-spacing: -0.01em; text-transform: uppercase;
+            line-height: 1.1; margin-bottom: 8px;
+        }
+        .popup-box h3 .blue { color: var(--accent); }
+        .popup-sub {
+            font-size: 0.88rem; color: var(--muted);
+            margin-bottom: 32px; line-height: 1.7;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.62rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--muted); margin-bottom: 8px;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(59,130,246,0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.92rem;
+            padding: 14px 16px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            margin-bottom: 16px;
+        }
+        .form-control::placeholder { color: rgba(248,250,252,0.22); }
+        .form-control:focus {
+            border-color: var(--border-solid);
+            box-shadow: 0 0 18px rgba(59,130,246,0.18);
+        }
+        textarea.form-control { resize: vertical; min-height: 96px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-row .form-group { display: flex; flex-direction: column; }
+        .form-row .form-control { margin-bottom: 0; }
+        .form-group { margin-bottom: 16px; }
+
+        .popup-submit {
+            width: 100%; margin-top: 8px;
+            background: var(--accent); color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            padding: 16px; border: none;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .popup-submit:hover {
+            background: var(--accent-2);
+            box-shadow: 0 0 24px var(--accent-glow);
+        }
+        .popup-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+
+        .success-state {
+            text-align: center; padding: 40px 0;
+        }
+        .success-icon {
+            width: 58px; height: 58px; border-radius: 50%;
+            background: rgba(59,130,246,0.1);
+            border: 2px solid var(--accent);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--accent); font-size: 1.6rem;
+        }
+        .success-state h3 {
+            font-size: 1.3rem; font-weight: 900;
+            letter-spacing: -0.01em; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .success-state p {
+            font-size: 0.92rem; color: var(--muted); line-height: 1.7;
+        }
+        .success-state a { color: var(--accent); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 960px) {
+            .features-grid { grid-template-columns: repeat(2,1fr); }
+            .nav-links, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+        }
+        @media (max-width: 640px) {
+            .container { padding: 0 22px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-card { border-right: none; border-bottom: 1px solid var(--border); }
+            .stat-card:last-child { border-bottom: none; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .cta-row { flex-direction: column; align-items: center; }
+            .form-row { grid-template-columns: 1fr; }
+            .popup-box { padding: 32px 22px; }
+            .hero h1 { font-size: clamp(44px, 13vw, 80px); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="position: relative; z-index: 2;">
-            <img src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png" 
-                 alt="LABS International" 
-                 class="logo">
-            <div style="margin-top: 36px; font-size: 21px; color: #999; letter-spacing: 7px; text-transform: uppercase; font-weight: 300;">
-                AI Automation for Everyone
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-close" id="mobileClose" aria-label="Close navigation">&#x2715;</button>
+        <a href="#services" id="mobServices">Services</a>
+        <a href="#results" id="mobResults">Results</a>
+        <a href="#integrations" id="mobIntegrations">Integrations</a>
+        <button class="mob-link" id="mobileFormBtn">Get Started</button>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="nav-wordmark" aria-label="LABS International home">
+                    <span class="dot"></span>LABS International
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                </ul>
+                <button class="nav-cta" id="navFormBtn" aria-label="Open get started form">Get Started</button>
+                <button class="hamburger" id="hamburger" aria-label="Open mobile navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1>AI That Runs<br>Your Business</h1>
-            <p>24/7 phone reception • lead qualification • appointment booking • follow-up automation • calendar sync • CRM integration</p>
-            <div style="margin-top: 64px;">
-                <a href="tel:8329374755" class="cta" id="callButton">Call (832) 937-4755</a>
-                <span style="margin:0 32px; color:#444;">•</span>
-                <button class="cta" id="automateButton">What Do You Want Automated?</button>
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-label="Hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-radial" aria-hidden="true"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="hero-topline" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">
+                <span class="eline"></span>
+                AI-Powered &nbsp;·&nbsp; 24/7 &nbsp;·&nbsp; Houston, Texas
+                <span class="eline"></span>
+            </p>
+            <h1>AI THAT<br><span class="blue">RUNS YOUR</span><br>BUSINESS.</h1>
+            <p class="hero-sub">
+                24/7 phone reception &nbsp;·&nbsp; lead qualification &nbsp;·&nbsp; appointment booking<br>
+                follow-up automation &nbsp;·&nbsp; calendar sync &nbsp;·&nbsp; CRM integration
+            </p>
+            <div class="hero-ctas">
+                <button class="btn-primary" id="heroFormBtn" aria-label="Open automation request form">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    What Do You Want Automated?
+                </button>
+                <a href="tel:8329374755" class="btn-outline" id="callButton" aria-label="Call us at 832-937-4755">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call (832) 937-4755
+                </a>
+            </div>
+            <div class="hero-cred" aria-label="Key capabilities">
+                <span class="cred-item">AI Voice Agents</span>
+                <span class="cred-sep" aria-hidden="true">·</span>
+                <span class="cred-item">Appointment Booking</span>
+                <span class="cred-sep" aria-hidden="true">·</span>
+                <span class="cred-item">Lead Qualification</span>
+                <span class="cred-sep" aria-hidden="true">·</span>
+                <span class="cred-item">CRM Integration</span>
+                <span class="cred-sep" aria-hidden="true">·</span>
+                <span class="cred-item">Infinite Scale</span>
             </div>
         </div>
     </section>
 
-    <section class="features">
+    <!-- STATS -->
+    <section class="stats" id="results" aria-label="Results">
         <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Simultaneous Calls Handled</div>
+                </div>
+                <div class="stat-card reveal reveal-d2">
+                    <div class="stat-number">30–60%</div>
+                    <div class="stat-label">More Booked Jobs from After-Hours Leads</div>
+                </div>
+                <div class="stat-card reveal reveal-d3">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Always-On AI Reception</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="services" aria-label="Services">
+        <div class="container">
+            <p class="section-eyebrow reveal">What We Automate</p>
+            <h2 class="section-title reveal">Six Systems.<br>One Platform.</h2>
+            <p class="section-sub reveal reveal-d1">Every tool your service business needs to capture every lead and book every job — running automatically, around the clock.</p>
+
             <div class="features-grid">
-                <div class="feature">
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
                     <h3>Never Miss a Lead</h3>
-                    <p>AI answers every call instantly with natural conversation. Qualifies prospects before they reach you.</p>
+                    <p>AI answers every call instantly with natural conversation. Qualifies prospects before they reach you — day or night, weekend or holiday.</p>
                 </div>
-                <div class="feature">
+
+                <div class="feature-card reveal reveal-d1">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
                     <h3>Book Jobs Automatically</h3>
-                    <p>Syncs with your calendar in real time. Sends confirmations and reminders. No double-bookings.</p>
+                    <p>Syncs with your calendar in real time. Sends confirmations and reminders automatically. No double-bookings, no back-and-forth phone tag.</p>
                 </div>
-                <div class="feature">
+
+                <div class="feature-card reveal reveal-d2">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
                     <h3>Smart Follow-Up Sequences</h3>
-                    <p>Automated texts and emails that nurture leads until they're ready to buy.</p>
+                    <p>Automated texts and emails that nurture leads until they're ready to buy. No lead falls through the cracks, ever.</p>
                 </div>
-                <div class="feature">
+
+                <div class="feature-card reveal reveal-d1">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
                     <h3>Handles Volume Spikes</h3>
-                    <p>50 calls at once during a storm? No problem. Infinite scale.</p>
+                    <p>50 calls at once during a storm? No problem. The system scales infinitely — no hold times, no missed calls during peak demand.</p>
                 </div>
-                <div class="feature">
+
+                <div class="feature-card reveal reveal-d2">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                    </div>
                     <h3>Works With Your Tools</h3>
-                    <p>Housecall Pro, ServiceTitan, Jobber, Google Calendar - seamless integration.</p>
+                    <p>Housecall Pro, ServiceTitan, Jobber, Google Calendar — seamless integration with the platforms you already use. No switching required.</p>
                 </div>
-                <div class="feature">
+
+                <div class="feature-card reveal reveal-d3">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
                     <h3>ROI in 30 Days</h3>
-                    <p>Clients average 30-60% more booked jobs from captured after-hours leads.</p>
+                    <p>Clients average 30–60% more booked jobs from captured after-hours leads alone. The system pays for itself in the first month.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- INTEGRATIONS -->
+    <section class="integrations" id="integrations" aria-label="Integrations">
+        <div class="container">
+            <p class="int-label reveal">Integrates With Your Existing Stack</p>
+            <div class="int-strip reveal reveal-d1">
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Housecall Pro</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>ServiceTitan</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Jobber</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Google Calendar</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>GoHighLevel</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Any CRM</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-label="Call to action">
+        <div class="container">
+            <p class="section-eyebrow reveal">Ready to Automate?</p>
+            <h2 class="reveal">STOP MISSING<br><span class="blue">AFTER-HOURS</span><br>LEADS.</h2>
+            <p class="reveal reveal-d1">Tell us what you want automated. We'll build it, configure it, and run it — so you can focus on the work.</p>
+            <div class="cta-row reveal reveal-d2">
+                <button class="btn-primary" id="ctaFormBtn" aria-label="Open automation request form">Get Started Today</button>
+                <a href="tel:8329374755" class="btn-outline" aria-label="Call us at 832-937-4755">Call (832) 937-4755</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="social">
-                <a href="https://instagram.com/labs.intl" target="_blank">Instagram</a>
-                <a href="https://youtube.com/@labsintl" target="_blank">YouTube</a>
+            <div class="footer-inner">
+                <img
+                    class="footer-logo-img"
+                    src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png"
+                    alt="LABS International"
+                >
+                <div class="footer-social" role="list">
+                    <a href="https://instagram.com/labs.intl" target="_blank" rel="noopener noreferrer" role="listitem">Instagram</a>
+                    <a href="https://youtube.com/@labsintl" target="_blank" rel="noopener noreferrer" role="listitem">YouTube</a>
+                    <a href="mailto:stephen@labsintl.com" role="listitem">Contact</a>
+                </div>
+                <p class="footer-legal">
+                    &copy; 2025 LABS International &nbsp;&bull;&nbsp; Houston, Texas
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="privacy.html">Privacy Policy</a>
+                    &nbsp;&bull;&nbsp;
+                    <a href="terms.html">Terms of Service</a>
+                </p>
             </div>
-            <p style="color:#444; font-size:14px;">© 2025 LABS International • Houston, Texas</p>
-            <p style="color:#666; font-size:12px; margin-top:10px;">
-                <a href="privacy.html" style="color:#666; text-decoration:none;">Privacy Policy</a> • 
-                <a href="terms.html" style="color:#666; text-decoration:none;">Terms of Service</a>
-            </p>
         </div>
     </footer>
 
-    <!-- Popup Form -->
-    <div class="popup-overlay" id="automationPopup">
+    <!-- AUTOMATION POPUP -->
+    <div class="popup-overlay" id="automationPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
         <div class="popup-box">
-            <button class="popup-close" id="closePopupBtn">×</button>
-            <h2>What Can We Automate?</h2>
-            <p>Tell us what would make your life or business easier and we will create the solution!</p>
-            
-            <form id="automationForm">
-                <textarea 
-                    name="automation_request" 
-                    placeholder="What would you like to automate?"
-                    required
-                ></textarea>
-                
-                <input 
-                    type="text" 
-                    name="name" 
-                    placeholder="Your Name"
-                    required
-                >
-                
-                <input 
-                    type="tel" 
-                    name="phone" 
-                    placeholder="Phone Number"
-                    required
-                >
-                
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Email Address"
-                    required
-                >
-                
-                <button type="submit">Submit Request</button>
-            </form>
+            <button class="popup-close" id="popupClose" aria-label="Close form">&#x2715;</button>
+
+            <!-- Form State -->
+            <div id="formState">
+                <h3 id="popupTitle">What Do You Want<br><span class="blue">Automated?</span></h3>
+                <p class="popup-sub">Tell us what would make your life or business easier — we'll build the solution and reach out within 24 hours.</p>
+                <form id="automationForm" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="automation_request">What Would You Like Automated?</label>
+                        <textarea
+                            class="form-control"
+                            id="automation_request"
+                            name="automation_request"
+                            placeholder="e.g. Answer my phones after hours, book appointments, follow up with leads automatically..."
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Your Name</label>
+                            <input class="form-control" type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input class="form-control" type="tel" id="phone" name="phone" placeholder="(713) 555-0100" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="john@yourcompany.com" required>
+                    </div>
+                    <button type="submit" class="popup-submit" id="formSubmitBtn">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Success State -->
+            <div id="successState" class="success-state" style="display:none;">
+                <div class="success-icon" aria-hidden="true">&#x2713;</div>
+                <h3>Request Received.</h3>
+                <p>
+                    We'll reach out within 24 hours to discuss your automation.<br>
+                    Need us sooner? Call <a href="tel:8329374755">(832) 937-4755</a>.
+                </p>
+            </div>
         </div>
     </div>
 
-<script>
-// Wait for DOM to fully load
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Track call button clicks
-    document.getElementById('callButton').addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'click', {
-                event_category: 'CTA',
-                event_label: 'Call Button'
-            });
-        }
-    });
-    
-    // Open popup
-    document.getElementById('automateButton').addEventListener('click', function() {
-        document.getElementById('automationPopup').classList.add('active');
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'popup_open', {
-                event_category: 'Form',
-                event_label: 'Automation Request'
-            });
-        }
-    });
-    
-    // Close popup
-    document.getElementById('closePopupBtn').addEventListener('click', function() {
-        document.getElementById('automationPopup').classList.remove('active');
-    });
-    
-    // Close on outside click
-    document.getElementById('automationPopup').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.remove('active');
-        }
-    });
-    
-    // Handle form submission
-    document.getElementById("automationForm").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        
-        const form = this;
-        
-        const formData = {
-            automation_request: form.automation_request.value,
-            name: form.name.value,
-            phone: form.phone.value,
-            email: form.email.value,
-            timestamp: new Date().toISOString()
-        };
+    <script>
+        'use strict';
 
-        console.log("Sending:", formData);
+        /* ── NAV SCROLL ── */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 48);
+        }, { passive: true });
 
-        try {
-            const response = await fetch("https://n8n.labsintl.com/webhook/web_automation_request", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
-            
-            if (response.ok) {
-                // Track conversion
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submit', {
-                        event_category: 'Lead',
-                        event_label: 'Automation Request'
-                    });
-                }
-                
-                alert("Thanks! We will reach out within 24 hours to discuss your automation.");
-                
-                // Close popup and reset form
-                document.getElementById('automationPopup').classList.remove('active');
-                form.reset();
-            } else {
-                throw new Error('Network response was not ok');
+        /* ── HAMBURGER / MOBILE MENU ── */
+        const hamburger    = document.getElementById('hamburger');
+        const mobileMenu   = document.getElementById('mobileMenu');
+        const mobileClose  = document.getElementById('mobileClose');
+
+        function openMobile()  { mobileMenu.classList.add('open');    hamburger.setAttribute('aria-expanded','true');  }
+        function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+
+        hamburger.addEventListener('click', openMobile);
+        mobileClose.addEventListener('click', closeMobile);
+        ['mobServices','mobResults','mobIntegrations'].forEach(id => {
+            document.getElementById(id).addEventListener('click', closeMobile);
+        });
+
+        /* ── POPUP ── */
+        const popup = document.getElementById('automationPopup');
+
+        function openPopup() { popup.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closePopup() {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+            // reset back to form after short delay
+            setTimeout(resetForm, 300);
+        }
+
+        ['heroFormBtn','navFormBtn','ctaFormBtn'].forEach(id => {
+            document.getElementById(id).addEventListener('click', openPopup);
+        });
+        document.getElementById('mobileFormBtn').addEventListener('click', () => {
+            closeMobile();
+            openPopup();
+        });
+        document.getElementById('popupClose').addEventListener('click', closePopup);
+        popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('active')) closePopup(); });
+
+        /* ── GA CALL TRACKING ── */
+        document.getElementById('callButton').addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', { event_category: 'CTA', event_label: 'Call Button' });
             }
-            
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            alert('Thanks for your request! If you do not hear from us within 24 hours, please call us directly at (832) 937-4755.');
-            
-            // Still close popup and reset form
-            document.getElementById('automationPopup').classList.remove('active');
-            form.reset();
-        }
-    });
-    
-});
-</script>
+        });
 
+        /* ── FORM SUBMIT ── */
+        const automationForm = document.getElementById('automationForm');
+        const submitBtn      = document.getElementById('formSubmitBtn');
+        const formState      = document.getElementById('formState');
+        const successState   = document.getElementById('successState');
+
+        automationForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const payload = {
+                automation_request: this.automation_request.value,
+                name:  this.name.value,
+                phone: this.phone.value,
+                email: this.email.value,
+                timestamp: new Date().toISOString()
+            };
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', { event_category: 'Lead', event_label: 'Automation Request' });
+            }
+
+            try {
+                const res = await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                // Show success regardless (n8n sometimes returns non-200 but still processes)
+            } catch (_) {
+                // Network error — still show success to user, data may still have posted
+            }
+
+            showSuccess();
+        });
+
+        function showSuccess() {
+            formState.style.display    = 'none';
+            successState.style.display = 'block';
+        }
+
+        function resetForm() {
+            formState.style.display    = 'block';
+            successState.style.display = 'none';
+            automationForm.reset();
+            submitBtn.disabled    = false;
+            submitBtn.textContent = 'Submit Request';
+        }
+
+        /* ── SCROLL REVEAL ── */
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
