@@ -8,7 +8,7 @@
     <meta name="keywords" content="AI automation, phone answering AI, appointment booking, lead qualification, service business automation, Houston AI, HVAC automation, roofing automation">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://labsintl.com">
-    <meta name="theme-color" content="#020817">
+    <meta name="theme-color" content="#05080F">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -63,88 +63,127 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== DESIGN TOKENS ===== */
+        /* ===== DESIGN SYSTEM TOKENS ===== */
         :root {
-            --bg:           #020817;
-            --surface:      #0f172a;
-            --surface-2:    #1e293b;
-            --accent:       #3b82f6;
-            --accent-2:     #6366f1;
-            --accent-glow:  rgba(59,130,246,0.3);
-            --text:         #f8fafc;
-            --muted:        rgba(248,250,252,0.55);
-            --border:       rgba(59,130,246,0.15);
-            --border-solid: rgba(59,130,246,0.4);
+            --moss:         #030507; /* Absolute dark black panel */
+            --charcoal:     #05080F; /* Main technical deep blue-black */
+            --navy:         #0A1020; /* Card base color */
+            --clay:         #FFD700; /* Signature Gold */
+            --cream:        #E8E4D9; /* Clean text cream */
+            --steel:        #8A9BB5; /* Muted blue-grey text */
+            --border-clay:  rgba(255, 215, 0, 0.22);
+            --border-white: rgba(232, 228, 217, 0.08);
+            --glow:         rgba(255, 215, 0, 0.18);
         }
 
-        /* ===== RESET ===== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* ===== GLOBAL RESET ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 0px !important; /* Forces strict sharp KNG rectangles */
+        }
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--charcoal);
+        }
         body {
-            font-family: 'Outfit', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Barlow', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; cursor: pointer; }
-        img { max-width: 100%; display: block; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button, input, textarea, select {
+            font-family: inherit;
+        }
+        button {
+            cursor: pointer;
+        }
 
-        /* ===== UTILITIES ===== */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--clay);
+        }
+        ::selection {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--cream);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
 
         /* ===== SCROLL REVEAL ===== */
         .reveal {
             opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.75s ease, transform 0.75s ease;
+            transform: translateY(32px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .reveal-d1 { transition-delay: 0.1s; }
         .reveal-d2 { transition-delay: 0.2s; }
         .reveal-d3 { transition-delay: 0.3s; }
         .reveal-d4 { transition-delay: 0.4s; }
-        .reveal-d5 { transition-delay: 0.5s; }
 
         /* ===== NAVBAR ===== */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 22px 0;
-            transition: background 0.35s, padding 0.35s, border-color 0.35s;
+            padding: 24px 0;
+            transition: background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
             border-bottom: 1px solid transparent;
         }
         nav.scrolled {
-            background: rgba(2,8,23,0.94);
+            background: rgba(5, 8, 15, 0.96);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 15px 0;
-            border-bottom-color: var(--border);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-clay);
         }
         .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .nav-wordmark {
-            font-size: 0.85rem;
-            font-weight: 900;
+        .nav-logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--text);
+            color: var(--cream);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .nav-wordmark .dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
+        .nav-logo .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clay);
             display: inline-block;
         }
         .nav-links {
@@ -154,40 +193,47 @@
             list-style: none;
         }
         .nav-links a {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--muted);
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta {
-            background: var(--accent);
-            color: #fff;
-            font-size: 0.7rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.76rem;
             font-weight: 700;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.25em;
+            color: var(--steel);
             text-transform: uppercase;
-            padding: 11px 26px;
-            border: none;
-            transition: background 0.2s, box-shadow 0.2s;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--clay);
+        }
+        .nav-cta {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--clay);
+            color: var(--charcoal);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border: 1px solid var(--clay);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
         .nav-cta:hover {
-            background: var(--accent-2);
-            box-shadow: 0 0 24px var(--accent-glow);
+            background: transparent;
+            color: var(--clay);
+            box-shadow: 0 0 20px var(--glow);
         }
         .hamburger {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             background: none;
             border: none;
             padding: 4px;
         }
         .hamburger span {
-            display: block; width: 24px; height: 2px;
-            background: var(--text);
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--cream);
             transition: all 0.3s;
         }
 
@@ -196,29 +242,40 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: var(--bg);
+            background: var(--charcoal);
             z-index: 150;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 36px;
+            border: 1px solid var(--border-clay);
         }
-        .mobile-menu.open { display: flex; }
+        .mobile-menu.open {
+            display: flex;
+        }
         .mobile-menu a, .mobile-menu button.mob-link {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.15em;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--text);
+            color: var(--cream);
             background: none;
             border: none;
             transition: color 0.2s;
         }
-        .mobile-menu a:hover, .mobile-menu button.mob-link:hover { color: var(--accent); }
+        .mobile-menu a:hover, .mobile-menu button.mob-link:hover {
+            color: var(--clay);
+        }
         .mobile-close {
-            position: absolute; top: 24px; right: 28px;
-            background: none; border: none;
-            color: var(--muted); font-size: 2rem; cursor: pointer;
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            background: none;
+            border: none;
+            color: var(--steel);
+            font-size: 2rem;
+            cursor: pointer;
         }
 
         /* ===== HERO ===== */
@@ -229,509 +286,710 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background: var(--charcoal);
         }
         .hero-bg {
-            position: absolute; inset: 0;
+            position: absolute;
+            inset: 0;
             background: url('https://raw.githubusercontent.com/LabsIntl/landing/main/image%20(1).jpg') center/cover no-repeat;
-            opacity: 0.07;
+            opacity: 0.12;
+            pointer-events: none;
         }
         .hero-grid {
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
-            background-size: 68px 68px;
-        }
-        .hero-radial {
             position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -58%);
-            width: 920px; height: 920px;
-            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 68%);
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,215,0,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,215,0,0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
             pointer-events: none;
         }
         .hero-vignette {
-            position: absolute; inset: 0;
+            position: absolute;
+            inset: 0;
             background: linear-gradient(to bottom,
-                var(--bg) 0%,
-                transparent 20%,
-                transparent 80%,
-                var(--bg) 100%);
+                rgba(5, 8, 15, 0.6) 0%,
+                transparent 30%,
+                transparent 70%,
+                var(--charcoal) 100%);
+            pointer-events: none;
         }
         .hero-topline {
-            position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(to right, transparent, rgba(59,130,246,0.65), transparent);
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, var(--clay), transparent);
+            opacity: 0.6;
         }
-
         .hero-content {
-            position: relative; z-index: 2;
+            position: relative;
+            z-index: 10;
             text-align: center;
-            max-width: 1040px;
-            padding: 160px 40px 80px;
+            max-width: 1000px;
+            padding: 160px 24px 80px;
         }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(22px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
         .hero-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--clay);
+            margin-bottom: 32px;
             display: inline-flex;
             align-items: center;
-            gap: 18px;
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.38em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 36px;
-            animation: fadeUp 0.8s ease both;
+            gap: 16px;
         }
-        .hero-eyebrow .eline {
-            display: block; width: 28px; height: 1px;
-            background: var(--accent); opacity: 0.55;
+        .hero-eyebrow span {
+            width: 24px;
+            height: 1px;
+            background: rgba(255, 215, 0, 0.5);
+            display: inline-block;
         }
-
         .hero h1 {
-            font-size: clamp(54px, 9vw, 108px);
-            font-weight: 900;
-            line-height: 0.93;
-            letter-spacing: -0.03em;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(38px, 7.5vw, 84px);
+            font-weight: 700;
+            line-height: 1.0;
+            letter-spacing: -0.01em;
             text-transform: uppercase;
-            margin-bottom: 36px;
-            animation: fadeUp 0.9s ease 0.08s both;
+            margin-bottom: 32px;
+            color: var(--cream);
         }
-        .hero h1 .blue { color: var(--accent); }
-
+        .hero h1 .highlight {
+            color: var(--clay);
+        }
         .hero-sub {
-            font-size: clamp(15px, 1.8vw, 20px);
+            font-size: clamp(15px, 1.8vw, 21px);
             font-weight: 500;
-            color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto 56px;
-            line-height: 1.75;
-            animation: fadeUp 0.9s ease 0.16s both;
+            color: var(--cream);
+            opacity: 0.95;
+            max-width: 760px;
+            margin: 0 auto 52px;
+            line-height: 1.7;
         }
-
         .hero-ctas {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 64px;
-            animation: fadeUp 0.9s ease 0.24s both;
         }
-
         .btn-primary {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--accent); color: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.72rem; font-weight: 700;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            padding: 16px 36px; border: none;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--clay);
+            color: var(--charcoal);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            border: 1px solid var(--clay);
+            transition: all 0.2s ease;
         }
         .btn-primary:hover {
-            background: var(--accent-2);
-            box-shadow: 0 0 32px var(--accent-glow);
-            transform: translateY(-2px);
+            background: transparent;
+            color: var(--clay);
+            box-shadow: 0 0 28px var(--glow);
         }
         .btn-outline {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: transparent; color: var(--text);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.72rem; font-weight: 700;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            padding: 15px 36px;
-            border: 1px solid var(--border-solid);
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--cream);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            border: 1px solid var(--border-white);
+            transition: all 0.2s ease;
         }
         .btn-outline:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 24px var(--accent-glow);
-            transform: translateY(-2px);
+            border-color: var(--clay);
+            color: var(--clay);
+            box-shadow: 0 0 20px var(--glow);
         }
 
         .hero-cred {
-            border-top: 1px solid rgba(248,250,252,0.07);
+            border-top: 1px solid var(--border-white);
             padding-top: 32px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            animation: fadeUp 0.9s ease 0.32s both;
+            gap: 4px;
         }
         .cred-item {
-            font-size: 0.62rem; font-weight: 600;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            color: rgba(248,250,252,0.38);
             font-family: monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(232, 228, 217, 0.5);
         }
-        .cred-sep { margin: 0 18px; color: rgba(59,130,246,0.28); font-size: 0.7rem; }
+        .cred-sep {
+            margin: 0 16px;
+            color: rgba(255, 215, 0, 0.3);
+            font-size: 0.8rem;
+        }
 
         /* ===== STATS ===== */
         .stats {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            background: var(--moss);
+            border-top: 1px solid var(--border-white);
+            border-bottom: 1px solid var(--border-white);
         }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
         .stat-card {
-            padding: 56px 40px;
+            padding: 64px 32px;
             text-align: center;
-            border-right: 1px solid var(--border);
-            transition: background 0.25s;
+            border-right: 1px solid var(--border-white);
+            transition: background 0.3s ease;
         }
-        .stat-card:last-child { border-right: none; }
-        .stat-card:hover { background: rgba(59,130,246,0.04); }
+        .stat-card:last-child {
+            border-right: none;
+        }
+        .stat-card:hover {
+            background: rgba(255, 215, 0, 0.02);
+        }
         .stat-number {
-            font-size: clamp(40px,5vw,66px);
-            font-weight: 900;
-            color: var(--accent);
-            letter-spacing: -0.03em;
-            line-height: 1;
-            margin-bottom: 14px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(38px, 4.8vw, 68px);
+            font-weight: 700;
+            color: var(--clay);
+            line-height: 1.0;
+            margin-bottom: 12px;
         }
         .stat-label {
-            font-size: 0.68rem; font-weight: 600;
-            letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--muted);
-            max-width: 200px; margin: 0 auto;
-            line-height: 1.6;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--steel);
+            max-width: 240px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        /* ===== SECTION COMMON ===== */
-        .section-eyebrow {
-            font-size: 0.63rem; font-weight: 700;
-            letter-spacing: 0.38em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: 18px;
+        /* ===== PHILOSOPHY SECTION ===== */
+        .philosophy {
+            position: relative;
+            padding: 120px 0;
+            background: var(--moss);
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-white);
         }
-        .section-title {
-            font-size: clamp(30px,4.5vw,52px);
-            font-weight: 900; letter-spacing: -0.025em;
-            text-transform: uppercase; line-height: 1.0;
-            margin-bottom: 22px;
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+            margin-top: 48px;
         }
-        .section-sub {
-            font-size: 1.05rem; color: var(--muted);
-            line-height: 1.75; max-width: 540px;
-            margin-bottom: 64px;
+        .philosophy-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 48px;
+            position: relative;
+            background: rgba(10, 16, 32, 0.2);
+        }
+        .philosophy-card.highlight {
+            border: 1px solid var(--clay);
+            background: rgba(10, 16, 32, 0.4);
+        }
+        .philosophy-card.highlight .corner-bracket {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-color: var(--clay);
+            border-style: solid;
+            pointer-events: none;
+        }
+        .philosophy-card.highlight .corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .philosophy-card.highlight .corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+        .philosophy-card.highlight .corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+        .philosophy-card.highlight .corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+        .philosophy-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            color: var(--steel);
+        }
+        .philosophy-card.highlight h3 {
+            color: var(--clay);
+        }
+        .philosophy-card h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--cream);
+        }
+        .philosophy-card p {
+            font-size: 1rem;
+            color: rgba(232, 228, 217, 0.8);
+            line-height: 1.7;
+        }
+        .tag-strip {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .philosophy-card.highlight .tag-strip {
+            border-top-color: rgba(255, 215, 0, 0.2);
+        }
+        .tag-strip span {
+            font-family: monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border: 1px solid rgba(232, 228, 217, 0.3);
+            color: var(--cream);
+        }
+        .philosophy-card.highlight .tag-strip span {
+            border-color: var(--clay);
+            color: var(--clay);
+            background: rgba(255, 215, 0, 0.04);
         }
 
         /* ===== FEATURES ===== */
-        .features { padding: 120px 0; }
+        .features {
+            padding: 120px 0;
+            background: var(--charcoal);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+        .section-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--clay);
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--steel);
+            line-height: 1.6;
+        }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
         .feature-card {
-            background: var(--bg);
-            padding: 44px 38px;
+            background: var(--navy);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 48px 40px;
             position: relative;
-            overflow: hidden;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
-        .feature-card::after {
-            content: '';
+        .feature-card::before {
+            content: "";
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 2px;
-            background: linear-gradient(to right, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
+            background: var(--clay);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
         }
-        .feature-card:hover { background: rgba(59,130,246,0.04); }
-        .feature-card:hover::after { opacity: 1; }
+        .feature-card:hover {
+            border-color: var(--clay);
+            background: rgba(10, 16, 32, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
         .feature-icon {
-            width: 46px; height: 46px;
-            background: rgba(59,130,246,0.08);
-            border: 1px solid var(--border-solid);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--accent);
-            margin-bottom: 26px;
+            color: var(--clay);
+            margin-bottom: 32px;
+            display: inline-block;
         }
         .feature-card h3 {
-            font-size: 0.88rem; font-weight: 800;
-            letter-spacing: 0.06em; text-transform: uppercase;
-            margin-bottom: 14px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: var(--cream);
         }
         .feature-card p {
-            font-size: 0.88rem; color: var(--muted); line-height: 1.75;
+            font-size: 0.94rem;
+            color: var(--steel);
+            line-height: 1.65;
         }
 
         /* ===== INTEGRATIONS ===== */
         .integrations {
             padding: 80px 0;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            background: var(--moss);
+            border-top: 1px solid var(--border-white);
+            border-bottom: 1px solid var(--border-white);
+            text-align: center;
         }
         .int-label {
-            text-align: center;
-            font-size: 0.63rem; font-weight: 700;
-            letter-spacing: 0.38em; text-transform: uppercase;
-            color: var(--muted); margin-bottom: 40px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--steel);
+            margin-bottom: 36px;
         }
-        .int-strip {
+        .int-grid {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 16px;
         }
         .int-pill {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 12px 22px;
-            border: 1px solid var(--border);
-            background: rgba(59,130,246,0.03);
-            font-size: 0.78rem; font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--muted);
-            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--cream);
+            transition: all 0.2s ease;
         }
         .int-pill:hover {
-            border-color: var(--border-solid);
-            color: var(--text);
-            background: rgba(59,130,246,0.07);
+            border-color: var(--clay);
+            background: rgba(255, 215, 0, 0.03);
+            color: var(--clay);
         }
         .int-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            background: var(--clay);
+            display: inline-block;
         }
 
-        /* ===== CTA BAND ===== */
-        .cta-band {
+        /* ===== CONTACT FORM SECTION ===== */
+        .contact {
             padding: 120px 0;
-            text-align: center;
+            background: var(--charcoal);
             position: relative;
-            overflow: hidden;
         }
-        .cta-band::before {
-            content: '';
+        .contact-frame {
+            border: 1px solid var(--border-clay);
+            background: var(--moss);
+            padding: 64px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .contact-frame .corner-bracket {
             position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%,-50%);
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 68%);
+            width: 20px;
+            height: 20px;
+            border-color: var(--clay);
+            border-style: solid;
             pointer-events: none;
         }
-        .cta-band h2 {
-            font-size: clamp(34px,5.5vw,68px);
-            font-weight: 900; letter-spacing: -0.025em;
-            text-transform: uppercase; line-height: 1.0;
-            margin-bottom: 22px;
+        .contact-frame .corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .contact-frame .corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+        .contact-frame .corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+        .contact-frame .corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 48px;
         }
-        .cta-band h2 .blue { color: var(--accent); }
-        .cta-band p {
-            font-size: 1.05rem; color: var(--muted);
-            max-width: 520px; margin: 0 auto 48px;
-            line-height: 1.75;
+        .contact-header h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(24px, 4.5vw, 42px);
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 16px;
         }
-        .cta-row {
-            display: flex; gap: 14px;
-            justify-content: center; flex-wrap: wrap;
+        .contact-header p {
+            font-size: 1rem;
+            color: var(--steel);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-label {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-clay);
+            color: var(--cream);
+            font-size: 0.95rem;
+            padding: 16px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .form-control::placeholder {
+            color: rgba(232, 228, 217, 0.3);
+        }
+        .form-control:focus {
+            border-color: var(--clay);
+            background: rgba(255, 215, 0, 0.02);
+            box-shadow: 0 0 16px var(--glow);
+        }
+        textarea.form-control {
+            resize: none;
+            min-height: 120px;
+        }
+        .form-submit-btn {
+            font-family: 'Rajdhani', sans-serif;
+            width: 100%;
+            background: var(--clay);
+            color: var(--charcoal);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 18px;
+            border: 1px solid var(--clay);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+        .form-submit-btn:hover {
+            background: transparent;
+            color: var(--clay);
+            box-shadow: 0 0 24px var(--glow);
+        }
+        .form-submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .trust-note {
+            margin-top: 24px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .trust-note svg {
+            color: var(--clay);
+        }
+        .trust-note span {
+            font-family: monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--steel);
+        }
+
+        /* Form states */
+        .success-state {
+            text-align: center;
+            padding: 48px 0;
+        }
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--clay);
+            color: var(--clay);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            box-shadow: 0 0 20px var(--glow);
+        }
+        .success-state h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .success-state p {
+            font-size: 0.96rem;
+            color: var(--steel);
+            line-height: 1.6;
+        }
+        .success-state a {
+            color: var(--clay);
+            text-decoration: underline;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            padding: 72px 0 48px;
-            border-top: 1px solid var(--border);
-        }
-        .footer-inner {
-            display: flex; flex-direction: column;
-            align-items: center; gap: 28px;
+            padding: 80px 0 48px;
+            background: var(--moss);
+            border-top: 1px solid var(--border-white);
             text-align: center;
         }
-        .footer-logo-img {
-            height: 52px; width: auto;
-            margin: 0 auto;
-            filter: brightness(1.05);
+        .footer-logo {
+            height: 56px;
+            width: auto;
+            margin: 0 auto 32px;
+            filter: brightness(1.1);
         }
-        .footer-social {
-            display: flex; gap: 36px;
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+            margin-bottom: 40px;
         }
-        .footer-social a {
-            font-size: 0.68rem; font-weight: 700;
-            letter-spacing: 0.18em; text-transform: uppercase;
-            color: var(--muted);
-            transition: color 0.2s;
+        .footer-socials a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--steel);
+            transition: color 0.2s ease;
         }
-        .footer-social a:hover { color: var(--accent); }
+        .footer-socials a:hover {
+            color: var(--clay);
+        }
         .footer-legal {
-            font-size: 0.6rem;
-            color: rgba(248,250,252,0.28);
-            letter-spacing: 0.06em;
+            font-family: monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            color: rgba(232, 228, 217, 0.3);
         }
         .footer-legal a {
-            color: rgba(248,250,252,0.4);
-            transition: color 0.2s;
+            color: rgba(232, 228, 217, 0.5);
+            transition: color 0.2s ease;
         }
-        .footer-legal a:hover { color: var(--accent); }
-
-        /* ===== POPUP ===== */
-        .popup-overlay {
-            position: fixed; inset: 0;
-            background: rgba(2,8,23,0.92);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            z-index: 200;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        .footer-legal a:hover {
+            color: var(--clay);
         }
-        .popup-overlay.active { display: flex; }
-
-        @keyframes popIn {
-            from { opacity: 0; transform: translateY(28px) scale(0.98); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .popup-box {
-            background: var(--surface);
-            border: 1px solid var(--border-solid);
-            box-shadow: 0 0 80px rgba(59,130,246,0.14);
-            width: 100%; max-width: 560px;
-            padding: 48px;
-            position: relative;
-            animation: popIn 0.3s ease;
-        }
-        .popup-close {
-            position: absolute; top: 18px; right: 22px;
-            background: none; border: none;
-            color: var(--muted); font-size: 1.4rem;
-            cursor: pointer; transition: color 0.2s;
-        }
-        .popup-close:hover { color: var(--text); }
-        .popup-box h3 {
-            font-size: 1.5rem; font-weight: 900;
-            letter-spacing: -0.01em; text-transform: uppercase;
-            line-height: 1.1; margin-bottom: 8px;
-        }
-        .popup-box h3 .blue { color: var(--accent); }
-        .popup-sub {
-            font-size: 0.88rem; color: var(--muted);
-            margin-bottom: 32px; line-height: 1.7;
-        }
-        .form-label {
-            display: block;
-            font-size: 0.62rem; font-weight: 700;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            color: var(--muted); margin-bottom: 8px;
-        }
-        .form-control {
-            width: 100%;
-            background: rgba(59,130,246,0.05);
-            border: 1px solid var(--border);
-            color: var(--text);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.92rem;
-            padding: 14px 16px;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            margin-bottom: 16px;
-        }
-        .form-control::placeholder { color: rgba(248,250,252,0.22); }
-        .form-control:focus {
-            border-color: var(--border-solid);
-            box-shadow: 0 0 18px rgba(59,130,246,0.18);
-        }
-        textarea.form-control { resize: vertical; min-height: 96px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        .form-row .form-group { display: flex; flex-direction: column; }
-        .form-row .form-control { margin-bottom: 0; }
-        .form-group { margin-bottom: 16px; }
-
-        .popup-submit {
-            width: 100%; margin-top: 8px;
-            background: var(--accent); color: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.72rem; font-weight: 700;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            padding: 16px; border: none;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s;
-        }
-        .popup-submit:hover {
-            background: var(--accent-2);
-            box-shadow: 0 0 24px var(--accent-glow);
-        }
-        .popup-submit:disabled { opacity: 0.55; cursor: not-allowed; }
-
-        .success-state {
-            text-align: center; padding: 40px 0;
-        }
-        .success-icon {
-            width: 58px; height: 58px; border-radius: 50%;
-            background: rgba(59,130,246,0.1);
-            border: 2px solid var(--accent);
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 24px;
-            color: var(--accent); font-size: 1.6rem;
-        }
-        .success-state h3 {
-            font-size: 1.3rem; font-weight: 900;
-            letter-spacing: -0.01em; text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-        .success-state p {
-            font-size: 0.92rem; color: var(--muted); line-height: 1.7;
-        }
-        .success-state a { color: var(--accent); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 960px) {
-            .features-grid { grid-template-columns: repeat(2,1fr); }
-            .nav-links, .nav-cta { display: none; }
-            .hamburger { display: flex; }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
         }
         @media (max-width: 640px) {
-            .container { padding: 0 22px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat-card { border-right: none; border-bottom: 1px solid var(--border); }
-            .stat-card:last-child { border-bottom: none; }
-            .hero-ctas { flex-direction: column; align-items: center; }
-            .cta-row { flex-direction: column; align-items: center; }
-            .form-row { grid-template-columns: 1fr; }
-            .popup-box { padding: 32px 22px; }
-            .hero h1 { font-size: clamp(44px, 13vw, 80px); }
+            .container {
+                padding: 0 20px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid var(--border-white);
+                padding: 48px 20px;
+            }
+            .stat-card:last-child {
+                border-bottom: none;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .contact-frame {
+                padding: 36px 20px;
+            }
+            .philosophy-card {
+                padding: 32px 24px;
+            }
+            .hero-cred {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .cred-sep {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- MOBILE MENU -->
+    <!-- MOBILE NAVIGATION OVERLAY -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <button class="mobile-close" id="mobileClose" aria-label="Close navigation">&#x2715;</button>
         <a href="#services" id="mobServices">Services</a>
-        <a href="#results" id="mobResults">Results</a>
+        <a href="#philosophy" id="mobPhilosophy">Our Model</a>
         <a href="#integrations" id="mobIntegrations">Integrations</a>
-        <button class="mob-link" id="mobileFormBtn">Get Started</button>
+        <a href="#contact" id="mobContact">Request Briefing</a>
     </div>
 
-    <!-- NAVIGATION -->
+    <!-- STICKY HEADER -->
     <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-inner">
-                <a href="#" class="nav-wordmark" aria-label="LABS International home">
+                <a href="#" class="nav-logo" aria-label="LABS International home">
                     <span class="dot"></span>LABS International
                 </a>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#results">Results</a></li>
+                    <li><a href="#philosophy">Our Model</a></li>
                     <li><a href="#integrations">Integrations</a></li>
+                    <li><a href="#contact">Request Briefing</a></li>
                 </ul>
-                <button class="nav-cta" id="navFormBtn" aria-label="Open get started form">Get Started</button>
+                <a href="#contact" class="nav-cta" aria-label="Submit an automation request">Get Started</a>
                 <button class="hamburger" id="hamburger" aria-label="Open mobile navigation" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -739,154 +997,249 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero" id="hero" aria-label="Hero">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-radial" aria-hidden="true"></div>
         <div class="hero-vignette" aria-hidden="true"></div>
         <div class="hero-topline" aria-hidden="true"></div>
 
         <div class="hero-content">
             <p class="hero-eyebrow">
-                <span class="eline"></span>
+                <span></span>
                 AI-Powered &nbsp;·&nbsp; 24/7 &nbsp;·&nbsp; Houston, Texas
-                <span class="eline"></span>
+                <span></span>
             </p>
-            <h1>AI THAT<br><span class="blue">RUNS YOUR</span><br>BUSINESS.</h1>
+            <h1>THE 24/7<br><span class="highlight">AUTOMATION ENGINE</span><br>FOR SERVICE BUSINESSES.</h1>
             <p class="hero-sub">
-                24/7 phone reception &nbsp;·&nbsp; lead qualification &nbsp;·&nbsp; appointment booking<br>
-                follow-up automation &nbsp;·&nbsp; calendar sync &nbsp;·&nbsp; CRM integration
+                Always-on AI voice agents response &nbsp;·&nbsp; lead qualification &nbsp;·&nbsp; automated scheduling &nbsp;·&nbsp; native CRM syncing. Capture every lead and book every job instantly.
             </p>
             <div class="hero-ctas">
-                <button class="btn-primary" id="heroFormBtn" aria-label="Open automation request form">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    What Do You Want Automated?
-                </button>
-                <a href="tel:8329374755" class="btn-outline" id="callButton" aria-label="Call us at 832-937-4755">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call (832) 937-4755
+                <a href="#contact" class="btn-primary" aria-label="Describe what you want automated">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    WHAT DO YOU WANT AUTOMATED?
+                </a>
+                <a href="tel:8329374755" class="btn-outline" id="callButton" aria-label="Call operations line at 832-937-4755">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    CALL (832) 937-4755
                 </a>
             </div>
-            <div class="hero-cred" aria-label="Key capabilities">
-                <span class="cred-item">AI Voice Agents</span>
+            <div class="hero-cred" aria-label="System credentials">
+                <span class="cred-item">VAPI VOICE ACTIVE</span>
                 <span class="cred-sep" aria-hidden="true">·</span>
-                <span class="cred-item">Appointment Booking</span>
+                <span class="cred-item">n8n INTEGRATED</span>
                 <span class="cred-sep" aria-hidden="true">·</span>
-                <span class="cred-item">Lead Qualification</span>
+                <span class="cred-item">24/7 OPERATIONS</span>
                 <span class="cred-sep" aria-hidden="true">·</span>
-                <span class="cred-item">CRM Integration</span>
+                <span class="cred-item">GOOGLE SHEETS SYNC</span>
                 <span class="cred-sep" aria-hidden="true">·</span>
-                <span class="cred-item">Infinite Scale</span>
+                <span class="cred-item">INFINITE SCALE</span>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats" id="results" aria-label="Results">
+    <!-- METRICS STRIP -->
+    <section class="stats" id="results" aria-label="System performance metrics">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card reveal">
                     <div class="stat-number">50+</div>
                     <div class="stat-label">Simultaneous Calls Handled</div>
                 </div>
-                <div class="stat-card reveal reveal-d2">
+                <div class="stat-card reveal reveal-d1">
                     <div class="stat-number">30–60%</div>
-                    <div class="stat-label">More Booked Jobs from After-Hours Leads</div>
+                    <div class="stat-label">Increase in Booked Jobs</div>
                 </div>
-                <div class="stat-card reveal reveal-d3">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Always-On AI Reception</div>
+                <div class="stat-card reveal reveal-d2">
+                    <div class="stat-number">24/7/365</div>
+                    <div class="stat-label">Always-On Agent Response</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features" id="services" aria-label="Services">
+    <!-- PHILOSOPHY / MODEL SECTION -->
+    <section class="philosophy" id="philosophy" aria-label="Operational Philosophy">
         <div class="container">
-            <p class="section-eyebrow reveal">What We Automate</p>
-            <h2 class="section-title reveal">Six Systems.<br>One Platform.</h2>
-            <p class="section-sub reveal reveal-d1">Every tool your service business needs to capture every lead and book every job — running automatically, around the clock.</p>
+            <p class="section-eyebrow reveal" style="text-align: center; margin-bottom: 16px;">THE OFF-HOURS LAG PROBLEM</p>
+            <h2 class="section-title reveal" style="text-align: center; margin-bottom: 24px; font-size: clamp(28px, 4vw, 42px);">Is Your Office Bleeding Leads?</h2>
+            
+            <div class="philosophy-grid">
+                <!-- Problem Card -->
+                <div class="philosophy-card reveal">
+                    <h3>THE PROBLEM</h3>
+                    <h4>Leads fall through the cracks.</h4>
+                    <p>
+                        Work gets done on the ground, but after-hours calls go straight to voicemail. Procrastinating prospects hang up and call the next competitor. By the time your office staff reviews the messages on Monday morning, the opportunity is long gone and the ad spend is wasted.
+                    </p>
+                    <div class="tag-strip">
+                        <span>MISSED CALLS</span>
+                        <span>DATA LATENCY</span>
+                        <span>VOICEMAIL LAG</span>
+                        <span>LOST REVENUE</span>
+                    </div>
+                </div>
+
+                <!-- Solution Card -->
+                <div class="philosophy-card highlight reveal reveal-d1">
+                    <span class="corner-bracket corner-tl"></span>
+                    <span class="corner-bracket corner-tr"></span>
+                    <span class="corner-bracket corner-bl"></span>
+                    <span class="corner-bracket corner-br"></span>
+                    <h3>THE LABS SOLUTION</h3>
+                    <h4>We capture every lead in real time.</h4>
+                    <p>
+                        Our AI voice and data pipelines respond on the first ring, 24/7. The agent qualifies the prospect, syncs their details directly with your CRM, and schedules the appointment on your calendar instantly. Operations run autonomously while you sleep.
+                    </p>
+                    <div class="tag-strip">
+                        <span>VAPI DISPATCH</span>
+                        <span>REAL-TIME CRM SYNC</span>
+                        <span>n8n AUTOMATION</span>
+                        <span>INSTANT BOOKING</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / FEATURE CARDS -->
+    <section class="features" id="services" aria-label="Our Services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow reveal">What We Automate</p>
+                <h2 class="section-title reveal">Six Systems. One Platform.</h2>
+                <p class="section-desc reveal reveal-d1">Every tool your service business needs to capture leads and schedule appointments — running automatically, around the clock.</p>
+            </div>
 
             <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <h3>Never Miss a Lead</h3>
+                    <p>AI answers every call instantly with natural, custom-tuned conversation. Qualifies prospects before they reach you — day or night.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-d1">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Book Jobs Automatically</h3>
+                    <p>Syncs with your calendar in real time. Sends confirmations and reminders automatically. Zero double-bookings or scheduling friction.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-d2">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3>Smart Follow-Up Sequences</h3>
+                    <p>Automated SMS and email nurture flows that follow up with leads until they commit. No opportunity is forgotten or abandoned.</p>
+                </div>
 
                 <div class="feature-card reveal">
                     <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
-                    <h3>Never Miss a Lead</h3>
-                    <p>AI answers every call instantly with natural conversation. Qualifies prospects before they reach you — day or night, weekend or holiday.</p>
+                    <h3>Infinite Scaling capacity</h3>
+                    <p>50 calls at once during high-demand weather events? No issue. The system scales instantly with zero hold times or queue drop-offs.</p>
                 </div>
 
                 <div class="feature-card reveal reveal-d1">
                     <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
                     </div>
-                    <h3>Book Jobs Automatically</h3>
-                    <p>Syncs with your calendar in real time. Sends confirmations and reminders automatically. No double-bookings, no back-and-forth phone tag.</p>
+                    <h3>Works With Your Stack</h3>
+                    <p>Housecall Pro, ServiceTitan, Jobber, Google Calendar — seamless integrations with the platforms you already use to manage dispatch.</p>
                 </div>
 
                 <div class="feature-card reveal reveal-d2">
                     <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                     </div>
-                    <h3>Smart Follow-Up Sequences</h3>
-                    <p>Automated texts and emails that nurture leads until they're ready to buy. No lead falls through the cracks, ever.</p>
+                    <h3>Immediate ROI</h3>
+                    <p>Average setups see a 30–60% increase in booked jobs from captured off-hours leads. The system pays for itself in the first month.</p>
                 </div>
-
-                <div class="feature-card reveal reveal-d1">
-                    <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    </div>
-                    <h3>Handles Volume Spikes</h3>
-                    <p>50 calls at once during a storm? No problem. The system scales infinitely — no hold times, no missed calls during peak demand.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-d2">
-                    <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-                    </div>
-                    <h3>Works With Your Tools</h3>
-                    <p>Housecall Pro, ServiceTitan, Jobber, Google Calendar — seamless integration with the platforms you already use. No switching required.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-d3">
-                    <div class="feature-icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    </div>
-                    <h3>ROI in 30 Days</h3>
-                    <p>Clients average 30–60% more booked jobs from captured after-hours leads alone. The system pays for itself in the first month.</p>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- INTEGRATIONS -->
-    <section class="integrations" id="integrations" aria-label="Integrations">
+    <!-- INTEGRATIONS MARQUEE -->
+    <section class="integrations" id="integrations" aria-label="Integrations list">
         <div class="container">
-            <p class="int-label reveal">Integrates With Your Existing Stack</p>
-            <div class="int-strip reveal reveal-d1">
+            <p class="int-label reveal">Integrates Natively With Your Software Stack</p>
+            <div class="int-grid reveal reveal-d1">
                 <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Housecall Pro</div>
                 <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>ServiceTitan</div>
                 <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Jobber</div>
                 <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Google Calendar</div>
                 <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>GoHighLevel</div>
-                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Any CRM</div>
+                <div class="int-pill"><span class="int-dot" aria-hidden="true"></span>Any CRM API</div>
             </div>
         </div>
     </section>
 
-    <!-- CTA BAND -->
-    <section class="cta-band" aria-label="Call to action">
+    <!-- BRIEFING FORM SECTION (KNG CONTACT METHOD) -->
+    <section class="contact" id="contact" aria-label="Contact and automation briefing">
         <div class="container">
-            <p class="section-eyebrow reveal">Ready to Automate?</p>
-            <h2 class="reveal">STOP MISSING<br><span class="blue">AFTER-HOURS</span><br>LEADS.</h2>
-            <p class="reveal reveal-d1">Tell us what you want automated. We'll build it, configure it, and run it — so you can focus on the work.</p>
-            <div class="cta-row reveal reveal-d2">
-                <button class="btn-primary" id="ctaFormBtn" aria-label="Open automation request form">Get Started Today</button>
-                <a href="tel:8329374755" class="btn-outline" aria-label="Call us at 832-937-4755">Call (832) 937-4755</a>
+            <div class="contact-frame reveal">
+                <!-- Corner Brackets -->
+                <span class="corner-bracket corner-tl"></span>
+                <span class="corner-bracket corner-tr"></span>
+                <span class="corner-bracket corner-bl"></span>
+                <span class="corner-bracket corner-br"></span>
+
+                <div id="formState">
+                    <div class="contact-header">
+                        <h2>Request an Automation Briefing</h2>
+                        <p>Tell us what workflows you want built — we'll review your requirements and reach out within 24 hours.</p>
+                    </div>
+
+                    <form id="automationForm" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="automation_request">What Would You Like Automated?</label>
+                            <textarea
+                                class="form-control"
+                                id="automation_request"
+                                name="automation_request"
+                                placeholder="Describe your workflow bottleneck (e.g., Answer dispatch calls after hours, schedule HVAC appointments directly to Jobber, text back missed calls...)"
+                                required
+                            ></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Your Name</label>
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Stephen Bourgeois" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input class="form-control" type="tel" id="phone" name="phone" placeholder="(832) 937-4755" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Official Email</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="stephen@labsintl.com" required>
+                        </div>
+                        <button type="submit" class="form-submit-btn" id="formSubmitBtn">
+                            <span>SUBMIT AUTOMATION REQUEST</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                    </form>
+
+                    <div class="trust-note">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        <span>SECURE ENDPOINT — DIRECT TO OPERATIONS — DISPATCH WITHIN 24 HOURS</span>
+                    </div>
+                </div>
+
+                <!-- SUCCESS STATE -->
+                <div id="successState" class="success-state" style="display: none;">
+                    <div class="success-icon" aria-hidden="true">&#x2713;</div>
+                    <h3>Briefing Request Received.</h3>
+                    <p>
+                        We have logged your automation requirements.<br>
+                        An engineer will reach out within 24 hours. For immediate support, call <a href="tel:8329374755">(832) 937-4755</a>.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -894,192 +1247,125 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-inner">
-                <img
-                    class="footer-logo-img"
-                    src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png"
-                    alt="LABS International"
-                >
-                <div class="footer-social" role="list">
-                    <a href="https://instagram.com/labs.intl" target="_blank" rel="noopener noreferrer" role="listitem">Instagram</a>
-                    <a href="https://youtube.com/@labsintl" target="_blank" rel="noopener noreferrer" role="listitem">YouTube</a>
-                    <a href="mailto:stephen@labsintl.com" role="listitem">Contact</a>
-                </div>
-                <p class="footer-legal">
-                    &copy; 2025 LABS International &nbsp;&bull;&nbsp; Houston, Texas
-                    &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="privacy.html">Privacy Policy</a>
-                    &nbsp;&bull;&nbsp;
-                    <a href="terms.html">Terms of Service</a>
-                </p>
-            </div>
+            <img
+                class="footer-logo"
+                src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png"
+                alt="LABS International"
+            >
+            <ul class="footer-socials" role="list">
+                <a href="https://instagram.com/labs.intl" target="_blank" rel="noopener noreferrer" role="listitem">Instagram</a>
+                <a href="https://youtube.com/@labsintl" target="_blank" rel="noopener noreferrer" role="listitem">YouTube</a>
+                <a href="mailto:stephen@labsintl.com" role="listitem">Email Operations</a>
+            </ul>
+            <p class="footer-legal">
+                &copy; 2025 LABS International &nbsp;&bull;&nbsp; Houston, Texas
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="privacy.html">Privacy Policy</a>
+                &nbsp;&bull;&nbsp;
+                <a href="terms.html">Terms of Service</a>
+            </p>
         </div>
     </footer>
 
-    <!-- AUTOMATION POPUP -->
-    <div class="popup-overlay" id="automationPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-        <div class="popup-box">
-            <button class="popup-close" id="popupClose" aria-label="Close form">&#x2715;</button>
-
-            <!-- Form State -->
-            <div id="formState">
-                <h3 id="popupTitle">What Do You Want<br><span class="blue">Automated?</span></h3>
-                <p class="popup-sub">Tell us what would make your life or business easier — we'll build the solution and reach out within 24 hours.</p>
-                <form id="automationForm" novalidate>
-                    <div class="form-group">
-                        <label class="form-label" for="automation_request">What Would You Like Automated?</label>
-                        <textarea
-                            class="form-control"
-                            id="automation_request"
-                            name="automation_request"
-                            placeholder="e.g. Answer my phones after hours, book appointments, follow up with leads automatically..."
-                            required
-                        ></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Your Name</label>
-                            <input class="form-control" type="text" id="name" name="name" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input class="form-control" type="tel" id="phone" name="phone" placeholder="(713) 555-0100" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input class="form-control" type="email" id="email" name="email" placeholder="john@yourcompany.com" required>
-                    </div>
-                    <button type="submit" class="popup-submit" id="formSubmitBtn">Submit Request</button>
-                </form>
-            </div>
-
-            <!-- Success State -->
-            <div id="successState" class="success-state" style="display:none;">
-                <div class="success-icon" aria-hidden="true">&#x2713;</div>
-                <h3>Request Received.</h3>
-                <p>
-                    We'll reach out within 24 hours to discuss your automation.<br>
-                    Need us sooner? Call <a href="tel:8329374755">(832) 937-4755</a>.
-                </p>
-            </div>
-        </div>
-    </div>
-
+    <!-- INTERACTION SCRIPTS -->
     <script>
         'use strict';
 
-        /* ── NAV SCROLL ── */
+        /* ── NAVBAR SCROLL STYLE ── */
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 48);
         }, { passive: true });
 
-        /* ── HAMBURGER / MOBILE MENU ── */
-        const hamburger    = document.getElementById('hamburger');
-        const mobileMenu   = document.getElementById('mobileMenu');
-        const mobileClose  = document.getElementById('mobileClose');
+        /* ── MOBILE MENU TOGGLE ── */
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
 
-        function openMobile()  { mobileMenu.classList.add('open');    hamburger.setAttribute('aria-expanded','true');  }
-        function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+        function openMobile() {
+            mobileMenu.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+        }
+        function closeMobile() {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
 
         hamburger.addEventListener('click', openMobile);
         mobileClose.addEventListener('click', closeMobile);
-        ['mobServices','mobResults','mobIntegrations'].forEach(id => {
+
+        ['mobServices', 'mobPhilosophy', 'mobIntegrations', 'mobContact'].forEach(id => {
             document.getElementById(id).addEventListener('click', closeMobile);
         });
 
-        /* ── POPUP ── */
-        const popup = document.getElementById('automationPopup');
-
-        function openPopup() { popup.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closePopup() {
-            popup.classList.remove('active');
-            document.body.style.overflow = '';
-            // reset back to form after short delay
-            setTimeout(resetForm, 300);
+        /* ── GOOGLE ANALYTICS CALL CLICK TRACKING ── */
+        const callBtn = document.getElementById('callButton');
+        if (callBtn) {
+            callBtn.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { event_category: 'CTA', event_label: 'Call Button' });
+                }
+            });
         }
 
-        ['heroFormBtn','navFormBtn','ctaFormBtn'].forEach(id => {
-            document.getElementById(id).addEventListener('click', openPopup);
-        });
-        document.getElementById('mobileFormBtn').addEventListener('click', () => {
-            closeMobile();
-            openPopup();
-        });
-        document.getElementById('popupClose').addEventListener('click', closePopup);
-        popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape' && popup.classList.contains('active')) closePopup(); });
-
-        /* ── GA CALL TRACKING ── */
-        document.getElementById('callButton').addEventListener('click', () => {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', { event_category: 'CTA', event_label: 'Call Button' });
-            }
-        });
-
-        /* ── FORM SUBMIT ── */
+        /* ── FORM HANDLING ── */
         const automationForm = document.getElementById('automationForm');
-        const submitBtn      = document.getElementById('formSubmitBtn');
-        const formState      = document.getElementById('formState');
-        const successState   = document.getElementById('successState');
+        const submitBtn = document.getElementById('formSubmitBtn');
+        const formState = document.getElementById('formState');
+        const successState = document.getElementById('successState');
 
         automationForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
+            // Simple client verification
+            if (!this.name.value || !this.phone.value || !this.email.value || !this.automation_request.value) {
+                return;
+            }
+
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.querySelector('span').textContent = 'SUBMITTING...';
 
             const payload = {
                 automation_request: this.automation_request.value,
-                name:  this.name.value,
+                name: this.name.value,
                 phone: this.phone.value,
                 email: this.email.value,
                 timestamp: new Date().toISOString()
             };
 
+            // Trigger Google Analytics Lead Submit Event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submit', { event_category: 'Lead', event_label: 'Automation Request' });
+                gtag('event', 'form_submit', { event_category: 'Lead', event_label: 'Automation Briefing' });
             }
 
             try {
-                const res = await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
+                // Post payload to existing n8n automation webhook
+                await fetch('https://n8n.labsintl.com/webhook/web_automation_request', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                // Show success regardless (n8n sometimes returns non-200 but still processes)
-            } catch (_) {
-                // Network error — still show success to user, data may still have posted
+            } catch (err) {
+                console.warn("Submission error captured, proceeding to visual success confirmation:", err);
             }
 
-            showSuccess();
+            // Standard success confirmation display
+            formState.style.display = 'none';
+            successState.style.display = 'block';
         });
 
-        function showSuccess() {
-            formState.style.display    = 'none';
-            successState.style.display = 'block';
-        }
-
-        function resetForm() {
-            formState.style.display    = 'block';
-            successState.style.display = 'none';
-            automationForm.reset();
-            submitBtn.disabled    = false;
-            submitBtn.textContent = 'Submit Request';
-        }
-
-        /* ── SCROLL REVEAL ── */
+        /* ── SCROLL REVEAL (INTERSECTION OBSERVER) ── */
         const revealEls = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        revealEls.forEach(el => revealObserver.observe(el));
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
