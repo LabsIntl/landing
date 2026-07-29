@@ -1,186 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - LABS International</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Terms of Service | LABS International</title>
+    <meta name="description" content="Terms of Service for LABS International — outbound AI voice calls, SMS messaging, consent, and opt-out rights.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://labsintl.com/terms">
+    <meta name="theme-color" content="#05080F">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --moss:         #030507;
+            --charcoal:     #05080F;
+            --navy:         #0A1020;
+            --clay:         #FFD700;
+            --cream:        #E8E4D9;
+            --steel:        #8A9BB5;
+            --border-clay:  rgba(255, 215, 0, 0.22);
+            --border-white: rgba(232, 228, 217, 0.08);
+            --glow:         rgba(255, 215, 0, 0.12);
         }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; background: var(--charcoal); }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fff;
-            color: #111;
-            line-height: 1.6;
+            font-family: 'Barlow', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
         }
+        a { color: var(--clay); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--charcoal); }
+        ::-webkit-scrollbar-thumb { background: var(--clay); }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px;
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(5, 8, 15, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-clay);
+            padding: 20px 40px;
+            display: flex; align-items: center; justify-content: space-between;
         }
-
-        header {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 60px;
+        .nav-logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--cream); display: flex; align-items: center; gap: 10px;
         }
-
-        .logo {
-            height: 60px;
-            height: 180px;
-            display: block;
-            margin-bottom: 16px;
-            width: auto;
+        .nav-logo .dot { width: 8px; height: 8px; background: var(--clay); display: inline-block; }
+        .nav-back {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.76rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--clay); transition: opacity 0.2s;
         }
+        .nav-back:hover { opacity: 0.7; text-decoration: none; }
 
+        .page-wrap { max-width: 860px; margin: 0 auto; padding: 72px 40px 120px; }
+
+        .page-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.45em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 16px;
+        }
         h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800; line-height: 1.05;
+            color: var(--cream); margin-bottom: 14px;
         }
+        .effective {
+            font-size: 0.82rem; color: var(--steel);
+            letter-spacing: 0.1em; margin-bottom: 56px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-white);
+        }
+        .notice {
+            background: var(--glow);
+            border-left: 3px solid var(--clay);
+            padding: 20px 26px; margin-bottom: 48px;
+            font-size: 0.95rem; color: rgba(232,228,217,0.85); line-height: 1.65;
+        }
+        .notice strong { color: var(--cream); }
 
         h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin: 40px 0 16px;
-            color: #000;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.35rem; font-weight: 700;
+            color: var(--cream); margin-top: 52px; margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-white);
+            text-transform: uppercase; letter-spacing: 0.08em;
         }
-
         h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 24px 0 12px;
+            font-size: 0.8rem; font-weight: 700;
+            color: var(--clay); letter-spacing: 0.3em;
+            text-transform: uppercase; margin-top: 30px; margin-bottom: 10px;
+        }
+        p { margin-bottom: 16px; color: rgba(232,228,217,0.82); font-size: 1rem; }
+        ul { margin: 12px 0 20px 22px; color: rgba(232,228,217,0.82); font-size: 1rem; }
+        ul li { margin-bottom: 8px; line-height: 1.65; }
+        strong { color: var(--cream); }
+
+        .highlight-block {
+            background: rgba(10, 16, 32, 0.8);
+            border: 1px solid var(--border-clay);
+            padding: 24px 28px; margin: 24px 0 32px;
+        }
+        .highlight-block p { margin-bottom: 8px; }
+        .highlight-block p:last-child { margin-bottom: 0; }
+
+        .sms-box {
+            background: rgba(255,215,0,0.04);
+            border: 1px solid var(--border-clay);
+            padding: 28px; margin: 28px 0;
+        }
+        .sms-box .sms-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.35em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 16px;
+        }
+        .sms-row {
+            display: flex; gap: 16px; margin-bottom: 10px;
+            font-size: 0.95rem; color: rgba(232,228,217,0.82);
+        }
+        .sms-keyword {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700; color: var(--cream);
+            letter-spacing: 0.1em; min-width: 60px;
         }
 
-        p {
-            margin-bottom: 16px;
-            color: #444;
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,215,0,0.25), transparent);
+            margin: 56px 0;
         }
-
-        ul {
-            margin-bottom: 24px;
-            padding-left: 20px;
-            color: #444;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .legal-block {
-            background: #f9f9f9;
-            padding: 24px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            margin: 32px 0;
-        }
-
-        a {
-            color: #333;
-            text-decoration: underline;
-        }
-
-        a:hover {
-            color: #000;
-        }
-
         footer {
-            margin-top: 100px;
-            padding: 60px 0;
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
+            border-top: 1px solid var(--border-white);
+            padding: 28px 40px; text-align: center;
+            font-size: 0.78rem; color: rgba(232,228,217,0.3); letter-spacing: 0.1em;
         }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 40px;
-            font-weight: 500;
-            text-decoration: none;
+        footer a { color: rgba(255,215,0,0.6); font-size: 0.78rem; }
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            .page-wrap { padding: 48px 20px 80px; }
+            footer { padding: 24px 20px; }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png"
-                    alt="LABS International" class="logo">
-            </a>
-        </div>
-    </header>
+<nav>
+    <div class="nav-logo"><span class="dot"></span> LABS International</div>
+    <a href="https://labsintl.com" class="nav-back">← Back to Site</a>
+</nav>
 
-    <div class="container">
-        <h1>Terms of Service</h1>
-        <p><strong>Last Updated: December 12, 2025</strong></p>
+<div class="page-wrap">
 
-        <p>Welcome to LABS International. By accessing our website or using our services, you agree to comply with and
-            be bound by the following terms.</p>
+    <p class="page-label">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="effective">Effective Date: July 29, 2026 &nbsp;·&nbsp; LABS International LLC &nbsp;·&nbsp; Houston, TX</p>
 
-        <h2>1. Services</h2>
-        <p>LABS International provides AI-driven automation services for businesses, including but not limited to phone
-            reception, lead qualification, and appointment scheduling.</p>
-
-        <h2>2. Use of Services</h2>
-        <p>You agree to use our services only for lawful purposes and in a way that does not infringe the rights of,
-            restrict, or inhibit anyone else's use and enjoyment of the website.</p>
-
-        <h2>3. Mobile Terms of Service (SMS)</h2>
-        <div class="legal-block">
-            <h3>SMS/MMS Communications</h3>
-            <p><strong>Consent:</strong> By providing your mobile phone number, you consent to receive text messages
-                from us. This includes messages about your appointments, service inquiries, and relevant updates.</p>
-            <p><strong>Frequency:</strong> Message frequency varies based on your interactions with us.</p>
-            <p><strong>Cost:</strong> Message and data rates may apply depending on your mobile carrier plan.</p>
-            <p><strong>Opt-Out:</strong> If you wish to stop receiving text messages from us, reply with the keyword
-                <strong>STOP</strong>, <strong>CANCEL</strong>, or <strong>UNSUBSCRIBE</strong> to any text message you
-                receive from us. You will receive a confirmation message, and we will stop sending you messages.
-            </p>
-            <p><strong>Help:</strong> Reply <strong>HELP</strong> for assistance.</p>
-        </div>
-
-        <h2>4. Disclaimer</h2>
-        <p>Our website and services are provided "as is" without any representations or warranties, express or implied.
-        </p>
-
-        <h2>5. Limitation of Liability</h2>
-        <p>LABS International shall not be liable for any indirect, incidental, special, consequential, or punitive
-            damages arising out of or related to your use of the services.</p>
-
-        <h2>6. Changes to Terms</h2>
-        <p>We reserve the right to modify these terms at any time. Your continued use of the site after changes are
-            posted constitutes your acceptance of the new terms.</p>
-
-        <h2>7. Contact Us</h2>
-        <p>For any questions regarding these Terms, please contact us at:</p>
-        <p>
-            <strong>LABS International</strong><br>
-            Houston, Texas<br>
-            Email: <a href="mailto:support@labsintl.com">support@labsintl.com</a>
-        </p>
-
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="notice">
+        These Terms of Service govern your interactions with LABS International LLC, including use of our website, receipt of our AI voice agent demonstrations, and any SMS or phone communications we initiate with your consent. By engaging with our services or providing consent to be contacted, you agree to these terms.
     </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 LABS International • Houston, Texas</p>
-            <p style="margin-top:12px;">
-                <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
-            </p>
+    <!-- 1 -->
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+        By accessing <a href="https://labsintl.com">labsintl.com</a>, submitting your contact information, consenting to receive communications from us, or otherwise engaging with LABS International LLC, you agree to be bound by these Terms of Service and our <a href="/privacy">Privacy Policy</a>. If you do not agree, do not use our services or provide your contact information.
+    </p>
+
+    <!-- 2 -->
+    <h2>2. Our Services</h2>
+    <p>LABS International provides:</p>
+    <ul>
+        <li>Custom AI voice agent design, deployment, and management</li>
+        <li>Business process automation using AI, APIs, and workflow tools</li>
+        <li>SMS and voice communication infrastructure setup</li>
+        <li>CRM integration and database pipeline services</li>
+        <li>Live demonstrations of AI receptionist and outbound calling technology</li>
+    </ul>
+    <p>
+        These Terms apply specifically to outbound calling and SMS messaging activities conducted by LABS International as part of our sales demonstration and client acquisition process.
+    </p>
+
+    <!-- 3 -->
+    <h2>3. Outbound AI Voice Calls</h2>
+
+    <div class="highlight-block">
+        <p><strong>Artificial Voice Disclosure (FCC 2024):</strong> LABS International uses AI-generated voice technology to place outbound demonstration calls. Under the FCC's Declaratory Ruling of February 8, 2024, these are classified as "artificial voice" calls under the TCPA (47 U.S.C. § 227). We only place these calls to individuals who have provided prior express consent.</p>
+    </div>
+
+    <h3>Consent Requirements</h3>
+    <p>
+        We will only place AI-generated voice calls to your number if you have provided consent through one of the following methods:
+    </p>
+    <ul>
+        <li><strong>Verbal consent</strong> during a human-to-human introductory call with a LABS International representative, recorded in our consent log</li>
+        <li><strong>SMS confirmation</strong> by replying YES to our consent confirmation message</li>
+        <li><strong>Web form</strong> submission at <a href="/opt-in">labsintl.com/opt-in</a> with the consent checkbox checked</li>
+    </ul>
+
+    <h3>Call Disclosures (All AI Calls)</h3>
+    <p>Every AI-generated voice call from LABS International will include the following in the first sentence of the call:</p>
+    <ul>
+        <li>The name of the calling entity (LABS International)</li>
+        <li>A disclosure that the caller is an AI (artificial voice)</li>
+        <li>The reason for the call</li>
+    </ul>
+    <p>A callback phone number will be provided upon request during any call.</p>
+
+    <h3>Calling Hours</h3>
+    <p>
+        All outbound calls are placed between <strong>8:00 AM and 9:00 PM in the called party's local time zone</strong>, as required by 47 C.F.R. § 64.1200(c)(1). Time zones are determined by the called party's area code and listed business address.
+    </p>
+
+    <h3>Voicemail</h3>
+    <p>
+        If a call reaches voicemail, the same AI disclosure and identification requirements apply to the voicemail message. The voicemail will include the entity name, AI disclosure, reason for the call, and a callback number.
+    </p>
+
+    <!-- 4 -->
+    <h2>4. SMS Messaging</h2>
+    <p>
+        By providing your phone number and consenting to SMS communications, you agree to receive text messages from LABS International related to:
+    </p>
+    <ul>
+        <li>Consent confirmation messages (e.g., "Reply YES to confirm…")</li>
+        <li>AI demo scheduling and appointment reminders</li>
+        <li>Follow-up communications regarding our services</li>
+        <li>Call summaries or next-step information</li>
+    </ul>
+
+    <div class="sms-box">
+        <div class="sms-label">SMS Keywords</div>
+        <div class="sms-row">
+            <span class="sms-keyword">STOP</span>
+            <span>Unsubscribe from all SMS messages immediately. You will receive one final confirmation message.</span>
         </div>
-    </footer>
+        <div class="sms-row">
+            <span class="sms-keyword">HELP</span>
+            <span>Receive contact information and support instructions.</span>
+        </div>
+        <div class="sms-row">
+            <span class="sms-keyword">START</span>
+            <span>Re-subscribe to SMS messages if you have previously opted out.</span>
+        </div>
+        <div class="sms-row">
+            <span class="sms-keyword">YES</span>
+            <span>Confirm your consent to receive an AI voice call demonstration (in response to our consent confirmation SMS).</span>
+        </div>
+    </div>
+
+    <p><strong>Message frequency:</strong> Varies based on your engagement. Generally 1–4 messages per interaction sequence.</p>
+    <p><strong>Message and data rates may apply</strong> per your wireless carrier's plan.</p>
+    <p>
+        <strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong>
+    </p>
+    <p>
+        To get help or opt out, text <strong>HELP</strong> or <strong>STOP</strong> to any message we send, or contact us at <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a>.
+    </p>
+
+    <!-- 5 -->
+    <h2>5. Opt-Out Rights — Voice & SMS</h2>
+    <p>You may opt out of all communications from LABS International at any time:</p>
+    <ul>
+        <li><strong>During any call:</strong> Say "remove me," "don't call," "stop calling," or "take me off your list." The call will end immediately and your number will be added to our permanent Do-Not-Contact list.</li>
+        <li><strong>Via SMS:</strong> Reply STOP to any text message from us.</li>
+        <li><strong>Via email:</strong> Email <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a> with "OPT OUT" and your phone number.</li>
+        <li><strong>Via form:</strong> Contact us at <a href="https://labsintl.com">labsintl.com</a>.</li>
+    </ul>
+    <p>
+        Opt-out requests are processed immediately and are permanent. Your number will never be re-added to any calling or messaging list without your explicit new consent.
+    </p>
+
+    <!-- 6 -->
+    <h2>6. Call Recording</h2>
+    <p>
+        Calls with our AI voice agent and our human representatives may be recorded for quality assurance and training purposes. We comply with all applicable state call recording laws, including the all-party consent requirements of California, Florida, Illinois, Maryland, Massachusetts, Montana, Nevada, New Hampshire, Pennsylvania, Washington, and Connecticut.
+    </p>
+    <p>
+        If you are in one of these states, you will be notified at the call's start that recording may occur. Continuing the call constitutes your consent to recording. You may request that recording be disabled.
+    </p>
+
+    <!-- 7 -->
+    <h2>7. Use of Website</h2>
+    <p>
+        This website is a marketing and information platform for LABS International LLC. Content on this site is for informational purposes only and does not constitute a binding service agreement unless a separate written agreement has been executed. You may not use this website to engage in any unlawful activity, attempt unauthorized access to our systems, or misrepresent your identity.
+    </p>
+
+    <!-- 8 -->
+    <h2>8. Intellectual Property</h2>
+    <p>
+        All website content — including text, design, code, graphics, AI prompts, and proprietary workflow configurations — is owned by LABS International LLC and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without express written permission.
+    </p>
+
+    <!-- 9 -->
+    <h2>9. Limitation of Liability</h2>
+    <p>
+        To the fullest extent permitted by law, LABS International LLC shall not be liable for any indirect, incidental, consequential, or punitive damages arising from use of our services, website, or communications. Our services are provided "as is" without warranties of any kind, express or implied.
+    </p>
+
+    <!-- 10 -->
+    <h2>10. Governing Law</h2>
+    <p>
+        These Terms of Service are governed by the laws of the State of Texas, United States. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts located in Harris County, Texas.
+    </p>
+
+    <!-- 11 -->
+    <h2>11. Changes to These Terms</h2>
+    <p>
+        LABS International reserves the right to update these Terms at any time. The "Effective Date" at the top of this page will reflect the most recent revision. Continued use of our services or maintained opt-in status after changes are posted constitutes acceptance of the updated terms.
+    </p>
+
+    <!-- Contact -->
+    <h2>12. Contact Us</h2>
+    <p>
+        <strong>LABS International LLC</strong><br>
+        Houston, Texas<br>
+        Email: <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a><br>
+        Phone: <a href="tel:+18329374755">+1 (832) 937-4755</a><br>
+        Website: <a href="https://labsintl.com">labsintl.com</a>
+    </p>
+
+    <div class="divider"></div>
+
+    <p style="font-size:0.82rem; color: rgba(232,228,217,0.35); line-height:1.7;">
+        <strong style="color: rgba(232,228,217,0.5);">Legal Disclaimer:</strong> These Terms of Service were prepared to reflect LABS International's current operational practices and compliance requirements. They are not a substitute for advice from a qualified TCPA or telecommunications attorney. LABS International recommends periodic legal review of all outbound communication practices.
+    </p>
+
+    <div style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-white); font-size: 0.85rem; color: var(--steel);">
+        <strong style="color: var(--cream);">Quick Links:</strong>&nbsp;
+        <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms">Terms of Service</a> &nbsp;·&nbsp;
+        <a href="/opt-in">Request AI Demo</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 LABS International LLC — All Rights Reserved &nbsp;·&nbsp;
+    <a href="/privacy">Privacy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms</a> &nbsp;·&nbsp;
+    <a href="mailto:stephen@labsintl.com">Contact</a>
+</footer>
 
 </body>
-
 </html>
