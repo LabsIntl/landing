@@ -1,195 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - LABS International</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Privacy Policy | LABS International</title>
+    <meta name="description" content="Privacy Policy for LABS International — covering data collection, AI voice calling, SMS communications, and A2P messaging compliance.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://labsintl.com/privacy">
+    <meta name="theme-color" content="#05080F">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --moss:         #030507;
+            --charcoal:     #05080F;
+            --navy:         #0A1020;
+            --clay:         #FFD700;
+            --cream:        #E8E4D9;
+            --steel:        #8A9BB5;
+            --border-clay:  rgba(255, 215, 0, 0.22);
+            --border-white: rgba(232, 228, 217, 0.08);
+            --glow:         rgba(255, 215, 0, 0.12);
         }
-
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        html { scroll-behavior: smooth; background: var(--charcoal); }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fff;
-            color: #111;
-            line-height: 1.6;
+            font-family: 'Barlow', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
         }
+        a { color: var(--clay); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--charcoal); }
+        ::-webkit-scrollbar-thumb { background: var(--clay); }
 
-        .container {
-            max-width: 800px;
+        /* NAV */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(5, 8, 15, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-clay);
+            padding: 20px 40px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--cream); display: flex; align-items: center; gap: 10px;
+        }
+        .nav-logo .dot { width: 8px; height: 8px; background: var(--clay); display: inline-block; }
+        .nav-back {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.76rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--clay);
+            transition: opacity 0.2s;
+        }
+        .nav-back:hover { opacity: 0.7; text-decoration: none; }
+
+        /* LAYOUT */
+        .page-wrap {
+            max-width: 860px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 72px 40px 120px;
         }
 
-        header {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 60px;
+        /* HEADER */
+        .page-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.45em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 16px;
         }
-
-        .logo {
-            height: 60px;
-            height: 180px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
         h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800; line-height: 1.05;
+            color: var(--cream); margin-bottom: 14px;
+        }
+        .effective {
+            font-size: 0.82rem; color: var(--steel);
+            letter-spacing: 0.1em; margin-bottom: 56px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-white);
         }
 
+        /* NOTICE BOX */
+        .notice {
+            background: var(--glow);
+            border-left: 3px solid var(--clay);
+            padding: 20px 26px; margin-bottom: 56px;
+            font-size: 0.95rem; color: rgba(232,228,217,0.85);
+            line-height: 1.65;
+        }
+        .notice strong { color: var(--cream); }
+
+        /* COMPLIANCE BADGE */
+        .compliance-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(255,215,0,0.06);
+            border: 1px solid var(--border-clay);
+            padding: 10px 18px; margin-bottom: 48px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--clay);
+        }
+        .compliance-badge .badge-dot { width: 6px; height: 6px; background: var(--clay); border-radius: 50%; }
+
+        /* SECTION HEADINGS */
         h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin: 40px 0 16px;
-            color: #000;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.35rem; font-weight: 700;
+            color: var(--cream); margin-top: 52px; margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-white);
+            text-transform: uppercase; letter-spacing: 0.08em;
         }
-
         h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 24px 0 12px;
+            font-size: 0.8rem; font-weight: 700;
+            color: var(--clay); letter-spacing: 0.3em;
+            text-transform: uppercase; margin-top: 30px; margin-bottom: 10px;
         }
-
-        p {
-            margin-bottom: 16px;
-            color: #444;
-        }
-
+        p { margin-bottom: 16px; color: rgba(232,228,217,0.82); font-size: 1rem; }
         ul {
-            margin-bottom: 24px;
-            padding-left: 20px;
-            color: #444;
+            margin: 12px 0 20px 22px;
+            color: rgba(232,228,217,0.82); font-size: 1rem;
+        }
+        ul li { margin-bottom: 8px; line-height: 1.65; }
+        strong { color: var(--cream); }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,215,0,0.25), transparent);
+            margin: 56px 0;
         }
 
-        li {
-            margin-bottom: 8px;
+        /* HIGHLIGHT BLOCK */
+        .highlight-block {
+            background: rgba(10, 16, 32, 0.8);
+            border: 1px solid var(--border-clay);
+            padding: 24px 28px; margin: 24px 0 32px;
         }
+        .highlight-block p { margin-bottom: 8px; }
+        .highlight-block p:last-child { margin-bottom: 0; }
 
-        .legal-block {
-            background: #f9f9f9;
-            padding: 24px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            margin: 32px 0;
-        }
-
-        a {
-            color: #333;
-            text-decoration: underline;
-        }
-
-        a:hover {
-            color: #000;
-        }
-
+        /* FOOTER */
         footer {
-            margin-top: 100px;
-            padding: 60px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border-white);
+            padding: 28px 40px;
             text-align: center;
-            font-size: 14px;
-            color: #666;
+            font-size: 0.78rem;
+            color: rgba(232,228,217,0.3);
+            letter-spacing: 0.1em;
         }
+        footer a { color: rgba(255,215,0,0.6); font-size: 0.78rem; }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 40px;
-            font-weight: 500;
-            text-decoration: none;
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            .page-wrap { padding: 48px 20px 80px; }
+            footer { padding: 24px 20px; }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/LabsIntl/landing/main/LABS_PLUS_2_NON-Transparent.png"
-                    alt="LABS International" class="logo">
-            </a>
-        </div>
-    </header>
+<nav>
+    <div class="nav-logo"><span class="dot"></span> LABS International</div>
+    <a href="https://labsintl.com" class="nav-back">← Back to Site</a>
+</nav>
 
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated: December 12, 2025</strong></p>
+<div class="page-wrap">
 
-        <p>LABS International ("we," "us," or "our") respects your privacy and is committed to protecting your personal
-            data. This Privacy Policy explains how we collect, use, and share information about you when you visit our
-            website or use our services.</p>
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="effective">Effective Date: July 29, 2026 &nbsp;·&nbsp; LABS International LLC &nbsp;·&nbsp; Houston, TX</p>
 
-        <h2>1. Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
-        <ul>
-            <li><strong>Personal Information:</strong> Name, email address, phone number, and business details you
-                explicitly provide via forms.</li>
-            <li><strong>Usage Data:</strong> Information about how you interact with our website (e.g., IP address,
-                browser type).</li>
-        </ul>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>We use your information to:</p>
-        <ul>
-            <li>Provide and improve our automation services.</li>
-            <li>Communicate with you regarding your inquiries or appointments.</li>
-            <li>Send you transactional notifications (e.g., booking confirmations).</li>
-        </ul>
-
-        <h2>3. SMS/Mobile Messaging</h2>
-        <div class="legal-block">
-            <h3>A2P 10DLC & SMS Compliance</h3>
-            <p>By providing your phone number, you consent to receive SMS messages from LABS International regarding
-                your inquiries, appointments, and service updates. Message frequency varies. Standard message and data
-                rates may apply.</p>
-            <p><strong>Opting Out:</strong> You can opt out of SMS messages at any time by replying
-                <strong>STOP</strong> to any message. For help, reply <strong>HELP</strong>.
-            </p>
-            <p><strong>Crucial Privacy Statement:</strong> No mobile information will be shared with third
-                parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging
-                originator opt-in data and consent; this information will not be shared with any third parties.</p>
-        </div>
-
-        <h2>4. Data Sharing & Disclosure</h2>
-        <p>We do not sell your personal data. We may share information with:</p>
-        <ul>
-            <li><strong>Service Providers:</strong> Trusted third-party vendors (e.g., cloud hosting, calendar
-                providers) who assist us in operating our business and who are bound by confidentiality agreements.</li>
-            <li><strong>Legal Requirements:</strong> If required by law or to protect our rights.</li>
-        </ul>
-
-        <h2>5. Data Security</h2>
-        <p>We implement reasonable security measures to protect your information. However, no method of transmission
-            over the Internet is 100% secure.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have questions about this policy, please contact us at:</p>
-        <p>
-            <strong>LABS International</strong><br>
-            Houston, Texas<br>
-            Email: <a href="mailto:support@labsintl.com">support@labsintl.com</a>
-        </p>
-
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="compliance-badge">
+        <span class="badge-dot"></span>
+        A2P 10DLC Compliant &nbsp;·&nbsp; TCPA Compliant &nbsp;·&nbsp; FCC 2024 AI Voice Rules
     </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 LABS International • Houston, Texas</p>
-            <p style="margin-top:12px;">
-                <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
-            </p>
-        </div>
-    </footer>
+    <div class="notice">
+        <strong>Summary:</strong> LABS International respects your privacy and is committed to full compliance with the Telephone Consumer Protection Act (TCPA), the FCC's 2024 Declaratory Ruling on AI-generated voice, and A2P 10DLC carrier registration requirements. This policy tells you exactly what data we collect, how we use it, and what rights you have — including how to opt out of any communication from us at any time.
+    </div>
+
+    <!-- SECTION 1 -->
+    <h2>1. Who We Are</h2>
+    <p>
+        LABS International LLC ("LABS," "we," "us," or "our") is a business automation and AI integration company headquartered in Houston, Texas. We build AI voice agents, SMS automation systems, and workflow integrations for service businesses. Our website is <a href="https://labsintl.com">labsintl.com</a>.
+    </p>
+    <p>
+        <strong>Contact:</strong><br>
+        Email: <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a><br>
+        Phone: <a href="tel:+18329374755">+1 (832) 937-4755</a><br>
+        Website: <a href="https://labsintl.com">labsintl.com</a>
+    </p>
+
+    <!-- SECTION 2 -->
+    <h2>2. Information We Collect</h2>
+
+    <h3>2a. Information You Provide Directly</h3>
+    <p>When you contact us, fill out a form, or interact with our services, we may collect:</p>
+    <ul>
+        <li>Full name and business name</li>
+        <li>Phone number (mobile or landline)</li>
+        <li>Email address</li>
+        <li>Business type and industry</li>
+        <li>Website URL</li>
+        <li>Description of your needs or inquiry</li>
+        <li>Appointment preferences</li>
+    </ul>
+
+    <h3>2b. Consent Records</h3>
+    <p>
+        When you provide consent to receive calls or text messages from us — whether verbally, via web form, or via SMS reply — we record and retain:
+    </p>
+    <ul>
+        <li>The date, time, and method of consent (verbal during a call, web form submission, or SMS reply "YES")</li>
+        <li>The specific consent language you agreed to</li>
+        <li>Your phone number and name at time of consent</li>
+        <li>IP address and timestamp if consent was provided via web form</li>
+    </ul>
+    <p>Consent records are retained for a minimum of <strong>5 years</strong> as required under TCPA best practices.</p>
+
+    <h3>2c. Call and SMS Records</h3>
+    <p>We maintain records of all outbound calls and SMS messages sent from our systems, including:</p>
+    <ul>
+        <li>Called/messaged phone number</li>
+        <li>Date and time of communication</li>
+        <li>Call duration and outcome</li>
+        <li>Call recordings (where permitted — see Section 6)</li>
+        <li>SMS message content and delivery status</li>
+    </ul>
+
+    <h3>2d. Automatically Collected Technical Data</h3>
+    <p>When you visit our website, standard technical data is collected by your browser and our hosting provider (Cloudflare / Google Analytics), including IP address, browser type, referring URL, and pages visited. This data is used for security and site performance only and is not linked to personal communications.</p>
+
+    <!-- SECTION 3 -->
+    <h2>3. AI Voice Calling — Disclosure</h2>
+
+    <div class="highlight-block">
+        <p><strong>IMPORTANT — FCC 2024 DECLARATORY RULING:</strong></p>
+        <p>
+            LABS International uses AI-generated voice technology (via Vapi) for certain outbound calls. Under the FCC's Declaratory Ruling of February 8, 2024, AI-generated voice calls are classified as "artificial voice" calls under 47 U.S.C. § 227 (the TCPA). These calls are legally equivalent to robocalls.
+        </p>
+        <p>
+            <strong>We will only place AI voice calls to individuals who have given prior express written consent or verifiable prior express consent.</strong> All AI voice calls will disclose at the start of the call: (1) the calling entity name (LABS International), (2) that the caller is an AI, and (3) the reason for the call.
+        </p>
+    </div>
+
+    <h3>How We Obtain Consent for AI Voice Calls</h3>
+    <p>
+        Our primary consent model is as follows: A representative of LABS International contacts you by phone (human-to-human call) to introduce our services. If you express interest and verbally agree to receive a follow-up AI demo call, that verbal consent is recorded in our consent log (timestamp, your name, number, and the representative who obtained consent). We may also send you an SMS asking you to confirm: <em>"Reply YES to confirm you'd like LABS International's AI to call you for a 3-minute demo. Reply STOP to opt out at any time."</em> Your YES reply constitutes prior express written consent under the TCPA.
+    </p>
+    <p>
+        Alternatively, you may provide consent via the web form at <a href="https://labsintl.com/opt-in">labsintl.com/opt-in</a>, which constitutes Prior Express Written Consent (PEWC) under 47 C.F.R. § 64.1200.
+    </p>
+
+    <!-- SECTION 4 -->
+    <h2>4. SMS Messaging — A2P 10DLC Disclosure</h2>
+
+    <div class="highlight-block">
+        <p><strong>A2P 10DLC Registration:</strong> LABS International's SMS messaging campaigns are registered under the CTIA/carrier A2P 10DLC program. Our messages are sent via SignalWire on registered 10-digit long code numbers.</p>
+    </div>
+
+    <h3>Types of SMS We Send</h3>
+    <ul>
+        <li><strong>Consent confirmation SMS:</strong> Sent after a verbal consent conversation to confirm opt-in ("Reply YES to confirm…")</li>
+        <li><strong>Appointment reminders:</strong> Sent to contacts who have booked a demo or call</li>
+        <li><strong>Follow-up messages:</strong> Sent only to opted-in contacts regarding AI automation services</li>
+        <li><strong>Transactional messages:</strong> Confirmation messages, call summaries, next-step instructions</li>
+    </ul>
+
+    <h3>SMS Opt-Out Instructions</h3>
+    <p>
+        You may opt out of SMS communications at any time by replying <strong>STOP</strong> to any message from us. Upon receipt of a STOP message, we will immediately cease all SMS communications to that number and add it to our internal Do-Not-Contact list. You may also opt back in by replying <strong>START</strong>.
+    </p>
+    <p>
+        <strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> All opt-in and opt-out requests are honored immediately and are permanently logged.
+    </p>
+    <p>Standard message and data rates may apply. Message frequency varies based on your engagement with our services.</p>
+
+    <!-- SECTION 5 -->
+    <h2>5. Do-Not-Call & Do-Not-Contact</h2>
+    <p>
+        LABS International maintains an internal Do-Not-Contact (DNC) list. Any individual who requests to be removed from our calling or messaging list — verbally, via SMS STOP, or via written request — will be added to this list immediately and will not be contacted again by any automated or AI-assisted system.
+    </p>
+    <p>
+        We also comply with the Federal Trade Commission's National Do-Not-Call Registry for residential lines, and applicable state DNC registries. Our AI voice agent is programmed to recognize verbal opt-out phrases including: "remove me," "don't call," "stop calling," "take me off your list," and similar expressions. Upon recognition of any opt-out phrase, the call will end immediately and the number will be added to our internal DNC list.
+    </p>
+    <p>
+        <strong>To be added to our Do-Not-Contact list:</strong> Email <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a> with your phone number and "OPT OUT" in the subject line, reply STOP to any SMS, or say "remove me" or "stop calling" during any call from us.
+    </p>
+
+    <!-- SECTION 6 -->
+    <h2>6. Call Recording</h2>
+    <p>
+        Calls with our AI voice agent (and optionally human calls made by our representatives) may be recorded for quality assurance and training purposes. We comply with applicable state wiretapping and two-party consent laws. The following states require all-party consent for call recording: California, Florida, Illinois, Maryland, Massachusetts, Montana, Nevada, New Hampshire, Pennsylvania, Washington, and Connecticut.
+    </p>
+    <p>
+        If you are located in one of these states, you will be notified at the beginning of the call that it may be recorded. If you do not consent to recording, you may request that recording be disabled, or you may end the call. Continuing the call after the recording disclosure constitutes your consent to recording.
+    </p>
+
+    <!-- SECTION 7 -->
+    <h2>7. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+        <li>Respond to your inquiries and deliver the services you have requested</li>
+        <li>Schedule and conduct AI voice agent demonstrations</li>
+        <li>Send follow-up SMS messages and appointment reminders (opted-in contacts only)</li>
+        <li>Maintain consent and DNC records as required by law</li>
+        <li>Improve the performance and accuracy of our AI systems</li>
+        <li>Comply with applicable legal obligations</li>
+    </ul>
+    <p>
+        We do not use your information for unsolicited marketing beyond the scope of what you have consented to, and we do not add you to any automated outreach sequence without your explicit consent.
+    </p>
+
+    <!-- SECTION 8 -->
+    <h2>8. Data Sharing & Third Parties</h2>
+    <p>
+        LABS International does not sell, rent, or trade your personal information to any third party. We may share data with the following service providers solely to deliver our services:
+    </p>
+    <ul>
+        <li><strong>SignalWire</strong> — our telephony carrier for voice and SMS communications</li>
+        <li><strong>Vapi</strong> — our AI voice platform</li>
+        <li><strong>Google LLC</strong> — for calendar scheduling and data logging via Google Sheets and Google Calendar</li>
+        <li><strong>OpenAI / ElevenLabs</strong> — AI language model and voice synthesis providers</li>
+        <li><strong>Cloudflare</strong> — website hosting and security</li>
+    </ul>
+    <p>
+        Each of these providers is bound by their own privacy policies and data processing agreements. <strong>No mobile phone number or SMS opt-in data is shared with third parties for marketing or promotional purposes.</strong>
+    </p>
+
+    <!-- SECTION 9 -->
+    <h2>9. Data Retention</h2>
+    <ul>
+        <li><strong>Consent records:</strong> Minimum 5 years</li>
+        <li><strong>DNC records:</strong> Permanent (never purged)</li>
+        <li><strong>Call recordings:</strong> 90 days unless retained for legal or compliance purposes</li>
+        <li><strong>Contact / CRM data:</strong> Retained for the duration of the business relationship plus 3 years</li>
+        <li><strong>Website analytics:</strong> Per Google Analytics data retention settings (default 26 months)</li>
+    </ul>
+
+    <!-- SECTION 10 -->
+    <h2>10. Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have the right to:</p>
+    <ul>
+        <li>Access the personal information we hold about you</li>
+        <li>Request correction of inaccurate information</li>
+        <li>Request deletion of your data (subject to legal retention obligations)</li>
+        <li>Withdraw consent for calls, SMS, or data processing</li>
+        <li>Opt out of any AI-generated voice calls or automated SMS</li>
+        <li>Request a copy of the consent record we have on file for you</li>
+    </ul>
+    <p>To exercise any right, contact us at <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a> with your name and phone number. We will respond within 10 business days.</p>
+
+    <!-- SECTION 11 -->
+    <h2>11. Security</h2>
+    <p>
+        This website is served over HTTPS via Cloudflare's global network. Consent and contact records are stored in Google Sheets with service account authentication and access controls. Call logs and recordings are stored in encrypted cloud storage. No system can guarantee 100% security; we apply commercially reasonable safeguards consistent with industry standards for communications data.
+    </p>
+
+    <!-- SECTION 12 -->
+    <h2>12. Calling Hours</h2>
+    <p>
+        All outbound calls — both human and AI-generated — are placed between <strong>8:00 AM and 9:00 PM in the called party's local time zone</strong>, as required by 47 C.F.R. § 64.1200(c)(1). Our dialing system derives the called party's time zone from their area code and listed business address.
+    </p>
+
+    <!-- SECTION 13 -->
+    <h2>13. Changes to This Policy</h2>
+    <p>
+        LABS International reserves the right to update this Privacy Policy at any time to reflect changes in our practices, services, or applicable law. Updates will be reflected by the "Effective Date" at the top of this page. We recommend reviewing this page periodically.
+    </p>
+
+    <div class="divider"></div>
+
+    <p style="font-size:0.82rem; color: rgba(232,228,217,0.35); line-height:1.7;">
+        <strong style="color: rgba(232,228,217,0.5);">Legal Disclaimer:</strong> This Privacy Policy was prepared to reflect LABS International's compliance practices. It is not a substitute for qualified legal counsel. We strongly recommend that all parties involved in telemarketing, AI voice calling, or A2P SMS campaigns consult a TCPA-qualified attorney before commencing outbound communications.
+    </p>
+
+    <div style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-white); font-size: 0.85rem; color: var(--steel);">
+        <strong style="color: var(--cream);">Quick Links:</strong>&nbsp;
+        <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="/terms">Terms of Service</a> &nbsp;·&nbsp;
+        <a href="/opt-in">Request AI Demo</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 LABS International LLC — All Rights Reserved &nbsp;·&nbsp;
+    <a href="/privacy">Privacy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms</a> &nbsp;·&nbsp;
+    <a href="mailto:stephen@labsintl.com">Contact</a>
+</footer>
 
 </body>
-
 </html>
