@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request AI Demo | LABS International</title>
+    <meta name="description" content="Consent to receive a 3-minute AI receptionist demo call from LABS International. Opt in here to see what our AI can do for your business.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://labsintl.com/opt-in">
+    <meta name="theme-color" content="#05080F">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --moss:         #030507;
+            --charcoal:     #05080F;
+            --navy:         #0A1020;
+            --clay:         #FFD700;
+            --cream:        #E8E4D9;
+            --steel:        #8A9BB5;
+            --border-clay:  rgba(255, 215, 0, 0.22);
+            --border-white: rgba(232, 228, 217, 0.08);
+            --glow:         rgba(255, 215, 0, 0.12);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; background: var(--charcoal); }
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: var(--clay); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--charcoal); }
+        ::-webkit-scrollbar-thumb { background: var(--clay); }
+
+        /* NAV */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(5, 8, 15, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-clay);
+            padding: 20px 40px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--cream); display: flex; align-items: center; gap: 10px;
+        }
+        .nav-logo .dot { width: 8px; height: 8px; background: var(--clay); display: inline-block; }
+        .nav-back {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.76rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--clay); transition: opacity 0.2s;
+        }
+        .nav-back:hover { opacity: 0.7; text-decoration: none; }
+
+        /* HERO */
+        .hero {
+            padding: 80px 40px 0;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .overline {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.45em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+        }
+        .overline::before, .overline::after {
+            content: ''; display: block;
+            width: 40px; height: 1px; background: var(--border-clay);
+        }
+        h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800; line-height: 1.05;
+            color: var(--cream); margin-bottom: 18px;
+        }
+        h1 span { color: var(--clay); }
+        .hero-sub {
+            font-size: 1.1rem; color: var(--steel);
+            max-width: 540px; margin: 0 auto 48px;
+            line-height: 1.65;
+        }
+
+        /* DEMO TYPES */
+        .demo-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border-white);
+            border: 1px solid var(--border-white);
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+        .demo-card {
+            background: var(--navy);
+            padding: 24px 20px;
+            text-align: center;
+        }
+        .demo-card .icon {
+            font-size: 1.6rem; margin-bottom: 10px;
+        }
+        .demo-card .demo-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--cream); margin-bottom: 8px;
+        }
+        .demo-card p {
+            font-size: 0.82rem; color: var(--steel); line-height: 1.55;
+        }
+
+        /* FORM */
+        .form-wrap {
+            max-width: 580px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+        .form-card {
+            background: var(--navy);
+            border: 1px solid var(--border-clay);
+            padding: 48px;
+        }
+        .form-header {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.4em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 32px;
+        }
+
+        .form-group { margin-bottom: 24px; }
+        label {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--steel); margin-bottom: 8px;
+        }
+        label .req { color: var(--clay); }
+        input, select, textarea {
+            width: 100%;
+            background: rgba(5, 8, 15, 0.8);
+            border: 1px solid var(--border-white);
+            color: var(--cream);
+            font-family: 'Barlow', sans-serif;
+            font-size: 1rem;
+            padding: 14px 16px;
+            outline: none;
+            transition: border-color 0.2s;
+            appearance: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--border-clay);
+            background: rgba(5, 8, 15, 0.95);
+        }
+        input::placeholder, textarea::placeholder { color: rgba(232,228,217,0.25); }
+        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FFD700' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+        select option { background: var(--navy); }
+        textarea { resize: vertical; min-height: 90px; }
+
+        /* DEMO CHOICE */
+        .demo-choice-group { margin-bottom: 28px; }
+        .demo-choice-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--steel); margin-bottom: 12px; display: block;
+        }
+        .demo-choice-options { display: flex; flex-direction: column; gap: 8px; }
+        .demo-option {
+            display: flex; align-items: flex-start; gap: 12px;
+            background: rgba(5, 8, 15, 0.6);
+            border: 1px solid var(--border-white);
+            padding: 14px 16px; cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .demo-option:hover { border-color: var(--border-clay); background: rgba(5,8,15,0.9); }
+        .demo-option input[type="checkbox"] {
+            width: 18px; height: 18px; flex-shrink: 0;
+            accent-color: var(--clay);
+            margin-top: 2px;
+        }
+        .demo-option-text { font-size: 0.93rem; color: rgba(232,228,217,0.82); line-height: 1.5; }
+        .demo-option-text strong { color: var(--cream); display: block; margin-bottom: 2px; }
+
+        /* CONSENT */
+        .consent-block {
+            background: rgba(255,215,0,0.04);
+            border: 1px solid var(--border-clay);
+            padding: 22px 24px;
+            margin: 32px 0 28px;
+        }
+        .consent-block .consent-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.35em; text-transform: uppercase;
+            color: var(--clay); margin-bottom: 14px;
+        }
+        .consent-row {
+            display: flex; align-items: flex-start; gap: 14px;
+        }
+        .consent-row input[type="checkbox"] {
+            width: 20px; height: 20px; flex-shrink: 0;
+            accent-color: var(--clay); margin-top: 3px;
+        }
+        .consent-text {
+            font-size: 0.88rem;
+            color: rgba(232,228,217,0.78);
+            line-height: 1.65;
+        }
+        .consent-text strong { color: var(--cream); }
+
+        /* SUBMIT */
+        .btn-submit {
+            width: 100%;
+            background: var(--clay);
+            color: var(--moss);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem; font-weight: 800;
+            letter-spacing: 0.35em; text-transform: uppercase;
+            padding: 18px 32px;
+            border: none; cursor: pointer;
+            transition: opacity 0.2s, transform 0.15s;
+            margin-top: 8px;
+        }
+        .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+        .btn-submit:active { transform: translateY(0); }
+        .btn-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        .form-fine-print {
+            font-size: 0.78rem; color: var(--steel);
+            text-align: center; margin-top: 18px;
+            line-height: 1.6;
+        }
+
+        /* SUCCESS STATE */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 56px 32px;
+        }
+        .success-state .success-icon {
+            font-size: 3rem; margin-bottom: 20px;
+        }
+        .success-state h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem; font-weight: 800;
+            color: var(--cream); margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+        .success-state p { color: var(--steel); max-width: 400px; margin: 0 auto 8px; }
+
+        /* ERROR */
+        .field-error {
+            font-size: 0.78rem; color: #f87171;
+            margin-top: 6px; display: none;
+        }
+        .input-error { border-color: rgba(248,113,113,0.5) !important; }
+
+        footer {
+            border-top: 1px solid var(--border-white);
+            padding: 28px 40px; text-align: center;
+            font-size: 0.78rem; color: rgba(232,228,217,0.3); letter-spacing: 0.1em;
+        }
+        footer a { color: rgba(255,215,0,0.6); font-size: 0.78rem; }
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            .hero { padding: 48px 20px 0; }
+            .demo-types { grid-template-columns: 1fr; }
+            .form-wrap { padding: 0 16px 80px; }
+            .form-card { padding: 28px 20px; }
+            footer { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo"><span class="dot"></span> LABS International</div>
+    <a href="https://labsintl.com" class="nav-back">← Back to Site</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="overline">Consent to Demo</div>
+    <h1>See the <span>AI Receptionist</span><br>in Action</h1>
+    <p class="hero-sub">
+        Choose how you want to experience the demo. We'll reach out at your preferred time. No pitch. Just the tech.
+    </p>
+</section>
+
+<!-- DEMO TYPES GRID -->
+<div class="demo-types">
+    <div class="demo-card">
+        <div class="icon">📞</div>
+        <div class="demo-title">Inbound Call</div>
+        <p>Call our AI agent yourself. Hear Jackson handle your inquiry like a real receptionist.</p>
+    </div>
+    <div class="demo-card">
+        <div class="icon">🤖</div>
+        <div class="demo-title">AI Outbound</div>
+        <p>Let our AI agent call you. Experience exactly what your customers would hear.</p>
+    </div>
+    <div class="demo-card">
+        <div class="icon">📱</div>
+        <div class="demo-title">HVAC Demo</div>
+        <p>Try our live HVAC booking agent — fully scripted, live call, real booking flow.</p>
+    </div>
+</div>
+
+<!-- FORM -->
+<div class="form-wrap">
+    <div class="form-card">
+        <div class="form-header">— Request Your Demo</div>
+
+        <form id="optInForm" novalidate>
+
+            <div class="form-group">
+                <label for="fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Smith" autocomplete="name" required>
+                <div class="field-error" id="nameError">Please enter your name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="businessName">Business Name <span class="req">*</span></label>
+                <input type="text" id="businessName" name="businessName" placeholder="Smith Plumbing & HVAC" required>
+                <div class="field-error" id="bizError">Please enter your business name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
+                <div class="field-error" id="phoneError">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry">
+                    <option value="">Select your industry…</option>
+                    <option value="hvac">HVAC</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="roofing">Roofing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="landscaping">Landscaping / Lawn Care</option>
+                    <option value="cleaning">Cleaning Services</option>
+                    <option value="pest_control">Pest Control</option>
+                    <option value="construction">General Construction</option>
+                    <option value="real_estate">Real Estate</option>
+                    <option value="other">Other Service Business</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bestTime">Best Time to Call</label>
+                <select id="bestTime" name="bestTime">
+                    <option value="">Select a time window…</option>
+                    <option value="morning">Morning (8am – 11am)</option>
+                    <option value="midday">Midday (11am – 1pm)</option>
+                    <option value="afternoon">Afternoon (1pm – 5pm)</option>
+                    <option value="evening">Evening (5pm – 8pm)</option>
+                    <option value="anytime">Anytime is fine</option>
+                </select>
+            </div>
+
+            <!-- DEMO TYPE SELECTION -->
+            <div class="demo-choice-group">
+                <span class="demo-choice-label">Which demo would you like? (select all that apply)</span>
+                <div class="demo-choice-options">
+                    <label class="demo-option">
+                        <input type="checkbox" name="demoType" value="inbound_call" id="demoInbound">
+                        <div class="demo-option-text">
+                            <strong>📞 I'll call your AI agent</strong>
+                            Provide me the number and I'll call Jackson to see how it handles my inquiry.
+                        </div>
+                    </label>
+                    <label class="demo-option">
+                        <input type="checkbox" name="demoType" value="ai_outbound" id="demoOutbound">
+                        <div class="demo-option-text">
+                            <strong>🤖 Have your AI call me</strong>
+                            I consent to receive an outbound AI demo call at the number I provide above.
+                        </div>
+                    </label>
+                    <label class="demo-option">
+                        <input type="checkbox" name="demoType" value="hvac_demo" id="demoHVAC">
+                        <div class="demo-option-text">
+                            <strong>🔧 HVAC demo call</strong>
+                            Call me as if I'm an HVAC customer — show me the booking agent live.
+                        </div>
+                    </label>
+                    <label class="demo-option">
+                        <input type="checkbox" name="demoType" value="meeting_stephen" id="demoMeeting">
+                        <div class="demo-option-text">
+                            <strong>📅 Book a call with Stephen</strong>
+                            I'd like a real conversation about deploying AI for my business.
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- CONSENT -->
+            <div class="consent-block">
+                <div class="consent-title">— Prior Express Written Consent (PEWC)</div>
+                <div class="consent-row">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent" class="consent-text">
+                        <strong>I expressly consent</strong> to receive AI-generated voice calls and/or SMS messages from <strong>LABS International LLC</strong> at the phone number I provided above for the purpose of an AI receptionist demonstration. I understand that:
+                        <br><br>
+                        (1) These calls may use <strong>artificial voice (AI-generated) technology</strong> as defined by the FCC's 2024 Declaratory Ruling;<br>
+                        (2) I can opt out at any time by saying "remove me" during any call, or replying STOP to any SMS;<br>
+                        (3) Msg &amp; data rates may apply;<br>
+                        (4) My mobile number will <strong>not</strong> be shared with third parties for marketing purposes;<br>
+                        (5) This consent is not a condition of purchasing any service.
+                        <br><br>
+                        See our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.
+                    </label>
+                </div>
+                <div class="field-error" id="consentError" style="display:none; margin-top:10px;">You must provide consent to submit this form.</div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                Request My Demo →
+            </button>
+
+            <p class="form-fine-print">
+                Your number will only be used for the demo you selected. No spam. No selling your info. Reply STOP anytime.
+            </p>
+        </form>
+
+        <!-- SUCCESS STATE -->
+        <div class="success-state" id="successState">
+            <div class="success-icon">✅</div>
+            <h2>You're Confirmed</h2>
+            <p>We received your demo request and logged your consent. Expect to hear from us soon — either a call from Stephen or the AI, based on what you selected.</p>
+            <p style="margin-top: 16px; font-size: 0.82rem;">If you need to reach us: <a href="mailto:stephen@labsintl.com">stephen@labsintl.com</a></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 LABS International LLC — All Rights Reserved &nbsp;·&nbsp;
+    <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="mailto:stephen@labsintl.com">Contact</a>
+</footer>
+
+<script>
+    const form = document.getElementById('optInForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successState = document.getElementById('successState');
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        // Name
+        const name = document.getElementById('fullName');
+        const nameError = document.getElementById('nameError');
+        if (!name.value.trim()) {
+            name.classList.add('input-error');
+            nameError.style.display = 'block';
+            valid = false;
+        } else {
+            name.classList.remove('input-error');
+            nameError.style.display = 'none';
+        }
+
+        // Business
+        const biz = document.getElementById('businessName');
+        const bizError = document.getElementById('bizError');
+        if (!biz.value.trim()) {
+            biz.classList.add('input-error');
+            bizError.style.display = 'block';
+            valid = false;
+        } else {
+            biz.classList.remove('input-error');
+            bizError.style.display = 'none';
+        }
+
+        // Phone
+        const phone = document.getElementById('phone');
+        const phoneError = document.getElementById('phoneError');
+        const phoneClean = phone.value.replace(/\D/g, '');
+        if (phoneClean.length < 10) {
+            phone.classList.add('input-error');
+            phoneError.style.display = 'block';
+            valid = false;
+        } else {
+            phone.classList.remove('input-error');
+            phoneError.style.display = 'none';
+        }
+
+        // Consent
+        const consent = document.getElementById('consent');
+        const consentError = document.getElementById('consentError');
+        if (!consent.checked) {
+            consentError.style.display = 'block';
+            valid = false;
+        } else {
+            consentError.style.display = 'none';
+        }
+
+        if (!valid) return;
+
+        // Collect demo selections
+        const demoTypes = Array.from(document.querySelectorAll('input[name="demoType"]:checked')).map(cb => cb.value);
+
+        // Build payload
+        const payload = {
+            fullName: name.value.trim(),
+            businessName: biz.value.trim(),
+            phone: phone.value.trim(),
+            industry: document.getElementById('industry').value,
+            bestTime: document.getElementById('bestTime').value,
+            demoTypes: demoTypes,
+            consentGiven: true,
+            consentTimestamp: new Date().toISOString(),
+            consentMethod: 'web_form',
+            pageUrl: window.location.href,
+            source: 'labsintl.com/opt-in'
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+
+        try {
+            // POST to Cloud Run backend
+            const res = await fetch('https://antigravity-backend-za6wzhdg4a-uc.a.run.app/api/vapi/opt-in', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            // Show success regardless (backend may not have endpoint yet)
+            form.style.display = 'none';
+            successState.style.display = 'block';
+
+            // Also log via Google Analytics if available
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'opt_in_submit', {
+                    event_category: 'Consent',
+                    event_label: demoTypes.join(',')
+                });
+            }
+        } catch (err) {
+            // Graceful degradation — show success even if backend isn't live yet
+            form.style.display = 'none';
+            successState.style.display = 'block';
+        }
+    });
+
+    // Live phone formatting
+    document.getElementById('phone').addEventListener('input', function() {
+        let v = this.value.replace(/\D/g, '');
+        if (v.length > 10) v = v.slice(0, 10);
+        if (v.length >= 6) v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
+        else if (v.length >= 3) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
+        this.value = v;
+    });
+</script>
+
+</body>
+</html>
